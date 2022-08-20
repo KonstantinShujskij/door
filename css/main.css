@@ -95,7 +95,7 @@ button {
     display: block;
 }
 
-.input_hide .input__value {
+.input_hide .input__value, .input_sort .input__value {
     padding-right: 20px;
 }
 
@@ -117,6 +117,44 @@ button {
     font-size: 12px;
     cursor: pointer;
 }
+
+.input__sort {
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    width: 16px;
+    height: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.input__sort i {
+    display: none;
+} 
+
+.input-sort__none {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+}
+
+.input-sort__lower, .input-sort__upper {
+    color: #00897b;
+}
+
+.input_sort-none .input-sort__none { display: block; }
+.input_sort-lower .input-sort__lower { display: block; }
+.input_sort-upper .input-sort__upper { display: block; }
+
 
 .popup {
     position: absolute;
