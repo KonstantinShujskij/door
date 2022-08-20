@@ -1,0 +1,281 @@
+.no-select {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    cursor: default;
+}
+
+.ml-auto { margin-left: auto; }
+.mr-auto { margin-right: auto; }
+
+.hide {
+    display: none;
+}
+
+button {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+
+.input {
+    display: block;
+    padding: 4px 0;
+    width: auto;
+    position: relative;
+    border-bottom: transparent 2px solid;
+}
+
+.input:focus-within {
+    border-bottom: #00897b 2px solid;
+}
+
+.input__value {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    color: #001e2b;
+    border: none;
+    outline: none;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    margin-top: 4px;
+    width: 144px;
+    min-width: 100%;
+    background-color: transparent;
+}
+
+.input__label {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #889397;
+    font-weight: 700;
+}
+
+.input__list {
+    display: none;
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: 54px;
+    width: calc(100% + 4px);
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    max-height: 120px;
+    overflow-y: auto;
+    background-color: #FFF;
+    z-index: 2;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+            box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+    padding: 4px 8px;
+    margin-bottom: 6px;
+}
+
+.input__case {
+    padding: 2px 4px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    -webkit-transition: 0.4s all ease;
+    -o-transition: 0.4s all ease;
+    transition: 0.4s all ease;
+} 
+
+.input__case:hover {
+    color: #001e2b;
+}
+
+.input:focus-within .input__list {
+    display: block;
+}
+
+.input_hide .input__value {
+    padding-right: 20px;
+}
+
+.input__show {
+    position: absolute;
+    right: 0px;
+    bottom: 4px;
+    width: 16px;
+    height: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.popup {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 2;
+    display: none;
+    padding: 24px;
+}
+
+.popup__body {
+    padding: 24px;
+    background-color: #FFF;
+    overflow-y: auto;
+    border-radius: 8px;
+    max-height: calc(100% - 48px);
+    overflow-x: hidden;
+}
+
+.popup__title {
+    text-align: start;
+    font-size: 16px;
+    color: #001e2b;
+    font-weight: 700;
+    width: 100%;
+    padding: 0 8px;
+}
+
+.popup__subtitle {
+    text-align: start;
+    font-size: 12px;
+    color: #00897b;
+    font-weight: 700;
+    width: 100%;
+    margin: 0 8px;
+    margin-top: 24px;
+    margin-bottom: -8px;
+    text-transform: uppercase;
+}
+
+.popup__item {
+    min-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 16px;
+}
+
+.popup__item .input {
+    margin: 0 8px;
+}
+
+.popup__buttons {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin-top: 24px;
+}
+
+.popup__button {
+    padding: 10px 16px;
+    background-color: #FFF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #001e2b;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    -webkit-transition: 0.4s ease all;
+    -o-transition: 0.4s ease all;
+    transition: 0.4s ease all;
+    border: 1.5px solid #001e2b;
+    margin: 0 4px;
+}
+
+.popup__button:focus {
+    background-color: #FFF;
+}
+
+.popup__button:hover {
+    color: #FFF;
+    background-color: #146ebe;
+    border-color:  #146ebe;
+}
+
+.popup__subbutton {
+    padding: 0 4px;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #001e2b;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    -webkit-transition: 0.4s ease all;
+    -o-transition: 0.4s ease all;
+    transition: 0.4s ease all;
+    margin: 0 4px;
+}
+
+.popup__subbutton:focus {
+    background-color: transparent;
+}
+
+.popup__subbutton:hover {
+    color: #00897b;
+}
+
+.popup__chek {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    padding-top: 16px;
+    margin: 0 8px;
+}
+
+.popup_disabled .popup__body{
+    background-color: #f0f0f0;
+}
+
+.popup__button[disabled] {
+    color: #889397;
+    border-color: #889397;
+    cursor: default;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background-color: #f0f0f0;
+}
+
+.chek__label {
+    font-size: 12px;
+    color: #889397;
+    font-weight: 700;
+    cursor: pointer;
+}
