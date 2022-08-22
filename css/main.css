@@ -49,6 +49,11 @@ button {
     background-color: transparent;
 }
 
+.input__text {
+    min-height: 64px;
+    resize: none;
+}
+
 .input__label {
     text-transform: uppercase;
     font-size: 12px;
@@ -69,7 +74,7 @@ button {
     max-height: 120px;
     overflow-y: auto;
     background-color: #FFF;
-    z-index: 2;
+    z-index: 4;
     border-radius: 4px;
     -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
             box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
@@ -137,11 +142,13 @@ button {
     cursor: pointer;
 }
 
-.input__sort i {
+.input__sort span {
     display: none;
+    width: 16px;
+    height: 16px;
 } 
 
-.input-sort__none {
+.input-sort__none i {
     -webkit-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
             transform: rotate(90deg);
@@ -180,12 +187,47 @@ button {
 }
 
 .popup__body {
-    padding: 24px;
     background-color: #FFF;
-    overflow-y: auto;
+    overflow-y: hidden;
     border-radius: 8px;
-    max-height: calc(100% - 48px);
+    max-height: 100%;
+    min-width: 280px;
     overflow-x: hidden;
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 0% 100% 0%;
+}
+
+.popup__content {
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 24px;
+    padding-bottom: 90px;
+}
+
+.popup__footer {
+    position: relative;
+}
+
+.popup__close {
+    width: 100%;
+    height: 0;
+    position: relative;
+}
+
+.popup__close-button {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.popup__close-button:hover { 
+    color: #ee6e73;
 }
 
 .popup__title {
@@ -227,11 +269,21 @@ button {
     margin: 0 8px;
 }
 
+.popup__item .input:focus-within {
+    position: relative;
+    z-index: 3;
+}
+
 .popup__buttons {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    margin-top: 24px;
+    position: absolute;
+    right: 24px;
+    bottom: 0;
+    background-color: #FFF;
+    padding-bottom: 16px;
+    padding-top: 12px;
 }
 
 .popup__button {
