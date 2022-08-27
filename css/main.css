@@ -158,9 +158,9 @@ button {
     color: #00897b;
 }
 
-.input_sort-none .input-sort__none { display: block; }
-.input_sort-lower .input-sort__lower { display: block; }
-.input_sort-upper .input-sort__upper { display: block; }
+.input_sort[data-sort="none"] .input-sort__none { display: block; }
+.input_sort[data-sort="lower"] .input-sort__lower { display: block; }
+.input_sort[data-sort="upper"] .input-sort__upper { display: block; }
 
 
 .popup {
@@ -183,29 +183,44 @@ button {
             align-items: center;
     z-index: 2;
     display: none;
-    padding: 24px;
+    padding: 24px 8px;
 }
 
 .popup__body {
-    background-color: #FFF;
     overflow-y: hidden;
-    border-radius: 8px;
     max-height: 100%;
-    min-width: 280px;
+    min-width: 420px;
     overflow-x: hidden;
     position: relative;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 0% 100% 0%;
+    background-color: transparent;
+    padding: 8px 0;
 }
 
 .popup__content {
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 24px;
+    padding: 24px 48px;
     padding-bottom: 90px;
+
 }
+
+.popup__content::before {
+    background-color: #FFF;
+    border-radius: 8px;
+    width: calc(100% - 48px);
+    height: calc(100% - 16px);
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    top: 8px;
+    bottom: 8px;
+    content: '';
+    box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 30%);
+} 
 
 .popup__footer {
     position: relative;
@@ -218,12 +233,14 @@ button {
 }
 
 .popup__close-button {
+
     position: absolute;
     width: 16px;
     height: 16px;
-    right: 8px;
-    top: 8px;
+    right: 36px;
+    top: 12px;
     cursor: pointer;
+    z-index: 2;
 }
 
 .popup__close-button:hover { 
@@ -237,6 +254,8 @@ button {
     font-weight: 700;
     width: 100%;
     padding: 0 8px;
+    position: relative;
+    z-index: 10;
 }
 
 .popup__subtitle {
@@ -249,6 +268,8 @@ button {
     margin-top: 24px;
     margin-bottom: -8px;
     text-transform: uppercase;
+    position: relative;
+    z-index: 1;
 }
 
 .popup__item {
@@ -280,10 +301,16 @@ button {
             justify-content: flex-end;
     position: absolute;
     right: 24px;
+    left: 24px;
+    width: calc(100% - 48px);
+    min-width: auto;
     bottom: 0;
-    background-color: #FFF;
+    background-color: #fff;
     padding-bottom: 16px;
     padding-top: 12px;
+    border-radius: 0px 0px 8px 8px;
+    padding-right: 10px;
+    z-index: 2;
 }
 
 .popup__button {
@@ -368,4 +395,9 @@ button {
     color: #889397;
     font-weight: 700;
     cursor: pointer;
+    z-index: 2;
+}
+
+.hide {
+    display: none !important;
 }

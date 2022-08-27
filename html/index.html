@@ -14,9 +14,9 @@
 </head>
 <body>
     
-    <section class="sidebar z-depth-2">
-        <div class="sidebar__item sidebar__item_active" onclick="setContent('users')">Пользователи</div>
-        <div class="sidebar__item" onclick="setContent('keys')">Ключи</div>
+    <section id="sidebar" class="sidebar z-depth-2">
+        <div class="sidebar__item sidebar__item_active" data-target="users">Пользователи</div>
+        <div class="sidebar__item" data-target="keys">Ключи</div>
     </section>
 
     <main class="main">
@@ -29,7 +29,7 @@
                         <i class="fa-solid fa-sliders"></i>
                     </button>
                     <div class="filter__list">
-                        <div class="filter__item filter__item-sort-lower z-depth-1">
+                        <div class="filter__item filter__item-sort-lower z-depth-1" draggable="true">
                             <div class="filter-item__sort">
                                 <i class="fa-solid fa-arrow-up-z-a filter-item__sort-upper"></i>
                                 <i class="fa-solid fa-arrow-down-a-z filter-item__sort-lower"></i>
@@ -41,6 +41,14 @@
                                 <i class="fa-solid fa-xmark"></i>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="content__info-list">
+                    <div class="info-list__select">
+                        Выбрано: <span class="info-list__value">1</span>
+                    </div>
+                    <div class="info-list__show">
+                        Показано: <span class="info-list__value">2</span> из <span class="info-list__value">100</span>
                     </div>
                 </div>
                 <div class="users__list">
@@ -58,7 +66,7 @@
                             <div class="user__group">Бугалтер</div>
                             <div class="user__group">Директор</div>
 
-                            <div class="user__proups-more">Детальние</div>
+                            <div class="user__proups-more" onclick="setPopup('edit')">Детальние</div>
                         </div>
                         <div class="user__remove"></div>
                         <div class="user__control">
@@ -90,7 +98,7 @@
                             <div class="user__group">Директор</div>
                             <div class="user__group">Директор</div>
 
-                            <div class="user__proups-more">Детальние</div>
+                            <div class="user__proups-more" onclick="setPopup('edit')">Детальние</div>
                         </div>
                         <div class="user__remove no-select">
                             <span tooltip="Востановить">Удален</span>
@@ -109,15 +117,21 @@
                     </div>
                 </div>
                 <div class="users__buttons">
-                    <button class="users__button users__button-cancel z-depth-1">Отменить выбор</button>
-                    <button class="users__button users__button-all z-depth-1">Выбрать все</button>
+                    <div id="users__button-all" class="users__button-all users__button-all_select">
+                        <label class="popup__chek">
+                            <input type="checkbox" class="filled-in" />
+                            <span></span>
+                            <div class="chek__label chek__label-select">Выбрать все</div>
+                            <div class="chek__label chek__label-clear">Отмениьт выбор</div>
+                        </label>
+                    </div>
                     <button class="users__button users__button-create z-depth-1" onclick="setPopup('create')">Создать</button>
                     <button class="users__button users__button-edit z-depth-1" onclick="setPopup('edit')">Изменить</button>
                     <button class="users__button users__button-remove z-depth-1">Удалить</button>
                 </div>
 
                 <div class="popup filter-popup">
-                    <div class="popup__body z-depth-2">
+                    <div class="popup__body">
                         <div class="popup__close">
                             <div class="popup__close-button" onclick="setPopup('none')">
                                 <i class="fa-solid fa-xmark"></i>
@@ -127,7 +141,7 @@
                         <div class="popup__content">
                             <div class="popup__title">Фильтр</div>
                             <div class="popup__item">
-                                <label class="input input_sort input_sort-upper">
+                                <label class="input input_sort" data-sort="upper">
                                     <div class="input__label">Id</div>
                                     <input type="text" class="input__value browser-default" placeholder="42" />
                                     <div class="input__sort">
@@ -144,7 +158,7 @@
                                 </label>
                             </div>
                             <div class="popup__item">
-                                <label class="input input_sort input_sort-none">
+                                <label class="input input_sort" data-sort="none">
                                     <div class="input__label">Фамилия</div>
                                     <input type="text" class="input__value browser-default" placeholder="Иванов" />
                                     <div class="input__sort">
@@ -159,7 +173,7 @@
                                         </span>
                                     </div>
                                 </label>
-                                <label class="input input_sort input_sort-upper">
+                                <label class="input input_sort" data-sort="upper">
                                     <div class="input__label">Имя</div>
                                     <input type="text" class="input__value browser-default" placeholder="Иван" />
                                     <div class="input__sort">
@@ -174,7 +188,7 @@
                                         </span>
                                     </div>
                                 </label>
-                                <label class="input input_sort input_sort-lower">
+                                <label class="input input_sort" data-sort="lower">
                                     <div class="input__label">Отчество</div>
                                     <input type="text" class="input__value browser-default" placeholder="Иванович" />
                                     <div class="input__sort">
@@ -243,7 +257,7 @@
                     </div>
                 </div>
                 <div class="popup create-popup">
-                    <div class="popup__body create-popup__body z-depth-2">
+                    <div class="popup__body create-popup__body">
                         <div class="popup__close">
                             <div class="popup__close-button" onclick="setPopup('none')">
                                 <i class="fa-solid fa-xmark"></i>
@@ -335,12 +349,12 @@
                                 </label>
                                 <label class="input">
                                     <div class="input__label">До</div>
-                                    <input type="text" class="input__value browser-default" placeholder="dd.mm.yyyy" />
+                                    <input id="user-popup-create-end-data" type="text" class="input__value browser-default" placeholder="dd.mm.yyyy" />
                                 </label>
                             </div>
     
                             <div class="poup__item">
-                                <label class="popup__chek">
+                                <label id="user-popup-create-delete" class="popup__chek hide">
                                     <input type="checkbox" class="filled-in" />
                                     <span></span>
                                     <div class="chek__label">Удалить по истечению</div>
@@ -372,7 +386,7 @@
                     </div>
                 </div>
                 <div class="popup edit-popup">
-                    <div class="popup__body z-depth-2">
+                    <div class="popup__body">
                         <div class="popup__close">
                             <div class="popup__close-button" onclick="setPopup('none')">
                                 <i class="fa-solid fa-xmark"></i>
@@ -558,18 +572,28 @@
                                         </button>
                                     </div>
                                 </div>
+                                <div class="user-key z-depth-1">
+                                    <div class="user-key__name">Key007</div>
+                                    <div class="user-key__id">42</div>
+                                    <div class="user-key__type">Чип</div>
+                                    <div class="user-key__button">
+                                        <button class="user-key__button-remove" tooltip="Открепить">
+                                            <i class="fa-solid fa-link-slash"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="popup__item user-key-add-wrap">
                                 <div class="user-key-add">
-                                    <button class="user-key-add__button" tooltip="Нажмите для добавления">
+                                    <button class="user-key-add__button" tooltip="Добавить ключ">
                                         <i class="fa-solid fa-plus"></i>
                                         Добавить ключ
                                     </button>
                                     <label class="user-key-add__list">
-                                        <div class="user-key-add__case">Добавить существующий</div>
-                                        <div class="user-key-add__case">Добавить считанный</div>
-                                        <div class="user-key-add__case">Добавить в ручную</div>
+                                        <div class="user-key-add__case" data-target="exist">Добавить существующий</div>
+                                        <div class="user-key-add__case" data-target="scan">Добавить считанный</div>
+                                        <div class="user-key-add__case" data-target="new">Добавить в ручную</div>
                                     </label>
                                 </div>
                             </div>
@@ -707,7 +731,7 @@
                         <i class="fa-solid fa-sliders"></i>
                     </button>
                     <div class="filter__list">
-                        <div class="filter__item filter__item-sort-none z-depth-1">
+                        <div class="filter__item filter__item-sort-none z-depth-1" draggable="true" >
                             <div class="filter-item__sort">
                                 <i class="fa-solid fa-arrow-up-z-a filter-item__sort-upper"></i>
                                 <i class="fa-solid fa-arrow-down-a-z filter-item__sort-lower"></i>
@@ -719,7 +743,7 @@
                                 <i class="fa-solid fa-xmark"></i>
                             </div>
                         </div>
-                        <div class="filter__item filter__item-sort-lower z-depth-1">
+                        <div class="filter__item filter__item-sort-lower z-depth-1" draggable="true">
                             <div class="filter-item__sort">
                                 <i class="fa-solid fa-arrow-up-9-1 filter-item__sort-upper"></i>
                                 <i class="fa-solid fa-arrow-up-1-9 filter-item__sort-lower"></i>
@@ -730,6 +754,14 @@
                                 <i class="fa-solid fa-xmark"></i>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="content__info-list">
+                    <div class="info-list__select">
+                        Выбрано: <span class="info-list__value">1</span>
+                    </div>
+                    <div class="info-list__show">
+                        Показано: <span class="info-list__value">2</span> из <span class="info-list__value">100</span>
                     </div>
                 </div>
                 <div class="keys__list">
@@ -804,14 +836,20 @@
                     </div>
                 </div>
                 <div class="keys__buttons">
-                    <button class="keys__button keys__button-cancel z-depth-1">Отменить выбор</button>
-                    <button class="keys__button keys__button-all z-depth-1">Выбрать все</button>
+                    <div id="keys__button-all" class="keys__button-all keys__button-all_select">
+                        <label class="popup__chek">
+                            <input type="checkbox" class="filled-in" />
+                            <span></span>
+                            <div class="chek__label chek__label-select">Выбрать все</div>
+                            <div class="chek__label chek__label-clear">Отмениьт выбор</div>
+                        </label>
+                    </div>
                     <button class="keys__button keys__button-create z-depth-1" onclick="setPopup('create')">Добавить</button>
                     <button class="keys__button keys__button-remove z-depth-1">Удалить</button>
                 </div>
 
                 <div class="popup filter-popup">
-                    <div class="popup__body z-depth-2">
+                    <div class="popup__body">
                         <div class="popup__close">
                             <div class="popup__close-button" onclick="setPopup('none')">
                                 <i class="fa-solid fa-xmark"></i>
@@ -821,7 +859,7 @@
                         <div class="popup__content">
                             <div class="popup__title">Фильтр</div>
                             <div class="popup__item">
-                                <label class="input input_sort input_sort-none">
+                                <label class="input input_sort" data-sort="none">
                                     <div class="input__label">Id</div>
                                     <input type="text" class="input__value browser-default" placeholder="42" />
                                     <div class="input__sort">
@@ -836,7 +874,7 @@
                                         </span>                                      
                                     </div>
                                 </label>
-                                <label class="input input_sort input_sort-none">
+                                <label class="input input_sort" data-sort="none">
                                     <div class="input__label">Название</div>
                                     <input type="text" class="input__value browser-default" placeholder="Key007" />
                                     <div class="input__sort">
@@ -883,7 +921,7 @@
                     </div>
                 </div>
                 <div class="popup create-popup">
-                    <div class="popup__body z-depth-2">
+                    <div class="popup__body">
                         <div class="popup__close">
                             <div class="popup__close-button" onclick="setPopup('none')">
                                 <i class="fa-solid fa-xmark"></i>
@@ -894,14 +932,14 @@
                             <div class="popup__title">Добавление ключа</div>
 
                             <div class="popup__item user-key-add-wrap">
-                                <div class="user-key-add">
-                                    <button class="user-key-add__button">
+                                <div class="user-key-add ">
+                                    <button class="user-key-add__button" tooltip="Добавить ключ">
                                         <i class="fa-solid fa-plus"></i>
-                                        Добавить в ручную
+                                        Добавить
                                     </button>
-                                    <label class="user-key-add__list" tooltip="Нажмите для добавления">
-                                        <div class="user-key-add__case">Добавить считанный</div>
-                                        <div class="user-key-add__case">Добавить в ручную</div>
+                                    <label class="user-key-add__list">
+                                        <div class="user-key-add__case" data-target="scan">Добавить считанный</div>
+                                        <div class="user-key-add__case" data-target="new">Добавить в ручную</div>
                                     </label>
                                 </div>
                             </div>
@@ -996,7 +1034,7 @@
                     </div>
                 </div>
                 <div class="popup edit-popup">
-                    <div class="popup__body z-depth-2">
+                    <div class="popup__body">
                         <div class="popup__close">
                             <div class="popup__close-button" onclick="setPopup('none')">
                                 <i class="fa-solid fa-xmark"></i>
@@ -1026,15 +1064,6 @@
         </section>
     </main>
 
-    <script>
-        const items = {}
-
-        const setContent = (content) => items.content.setAttribute('data-content', content)
-        const setPopup = (popup) => items.content.setAttribute('data-popup', popup)
-
-        window.onload = () => {
-            items.content = document.getElementById('content')
-        }
-    </script>
+    <script src="../demo.js"></script>
 </body>
 </html>
