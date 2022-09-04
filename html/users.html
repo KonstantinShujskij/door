@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/materialize.min.css">
+    <link rel="stylesheet" href="../css/iconsfont.css">
+    <link rel="stylesheet" href="../css/tooltip.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/users.css">
+</head>
+<body>
+    
+    <section id="sidebar" class="sidebar z-depth-2">
+        <a class="sidebar__item" href="settings.html">Настройки</a>
+        <a class="sidebar__item sidebar__item_active" href="users.html">Пользователи</a>
+        <a class="sidebar__item" href="keys.html">Ключи</a>
+    </section>
+
+    <main class="main">
+        <section id="content" class="content users" data-popup="none">
+            <div class="content__title">Пользователи</div>
+
+            <div class="content__filter filter">
+                <button class="filter__button" onclick="setPopup('filter')">
+                    <i class="fa-solid fa-sliders"></i>
+                </button>
+                <div class="filter__list">
+                    <div class="filter__item filter-item_sort-lower" draggable="true">
+                        <div class="filter-item__sort">
+                            <i class="fa-solid fa-arrow-up-z-a filter-item__sort-upper"></i>
+                            <i class="fa-solid fa-arrow-down-a-z filter-item__sort-lower"></i>
+                            <i class="fa-solid fa-right-left filter-item__sort-none"></i>
+                        </div>
+                        <div class="filter-item__label">Имя</div>
+                        <div class="filter-item__value">Василий</div>
+                        <div class="filter-item__dismis">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content__info-bar info-bar">
+                <div class="info-bar__select">
+                    Выбрано: <span class="info-bar__value">1</span>
+                </div>
+                <div class="info-bar__show">
+                    Показано: <span class="info-bar__value">2</span> из <span class="info-bar__value">100</span>
+                </div>
+            </div>
+
+            <div class="content__list users__list">
+                <div class="card user">
+                    <div class="card__title user__name">Иванов Василий Петрович</div>
+                    <label class="user__select">
+                        <input type="checkbox" class="filled-in" checked="checked" />
+                        <span></span>
+                    </label>
+                    <div class="user__id">42</div>
+                    <div class="user__time">19.04.1943-18.09.2022</div>
+                    <div class="user__company">Google</div>
+                    <div class="user__branch">Deep learning and II</div>
+                    <div class="user__groups">
+                        <div class="user-groups__item">Бугалтер</div>
+                        <div class="user-groups__item">Директор</div>
+
+                        <button class="user-groups__more" onclick="setPopup('edit')">Детальние</button>
+                    </div>
+                    <div class="user__remove"></div>
+                    <div class="user__control">
+                        <button class="card__button user__button user__button-edit" onclick="setPopup('edit')">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="card__button user__button user__button-remove">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                        <button class="card__button user__button user__button-restore" disabled>
+                            <i class="fa-solid fa-trash-can-arrow-up"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card user user_remove">
+                    <div class="card__title user__name">Иванов Василий Петрович</div>
+                    <label class="user__select">
+                        <input type="checkbox" class="filled-in" disabled="disabled" />
+                        <span></span>
+                    </label>
+                    <div class="user__id">42</div>
+                    <div class="user__time">19.04.1943-18.09.2022</div>
+                    <div class="user__company">Google</div>
+                    <div class="user__branch">Deep learning and II</div>
+                    <div class="user__groups">
+                        <div class="user-groups__item">Бугалтер</div>
+                        <div class="user-groups__item">Директор</div>
+                        <div class="user-groups__item">Директор</div>
+                        <div class="user-groups__item">Директор</div>
+
+                        <button class="user-groups__more" onclick="setPopup('edit')" disabled>Детальние</button>
+                    </div>
+                    <div class="user__remove no-select">
+                        <span tooltip="Востановить">Удален</span>
+                    </div>
+                    <div class="user__control">
+                        <button class="card__button user__button user__button-edit">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="card__button user__button user__button-remove">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                        <button class="card__button user__button user__button-restore">
+                            <i class="fa-solid fa-trash-can-arrow-up"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content__controls">
+                <div class="controls__button-all controls__button-all_select">
+                    <label class="controls__chek">
+                        <input type="checkbox" class="filled-in" />
+                        <span></span>
+                        <div class="chek__label controls-chek__select">Выбрать все</div>
+                        <div class="chek__label controls-chek__clear">Отмениьт выбор</div>
+                    </label>
+                </div>
+                <button class="controls__button controls__button-create" onclick="setPopup('create')">Создать</button>
+                <button class="controls__button controls__button-edit" onclick="setPopup('edit')">Изменить</button>
+                <button class="controls__button controls__button-remove">Удалить</button>
+            </div>
+
+            <div class="popup filter-popup">
+                <div class="popup__body">
+                    <div class="popup__close">
+                        <div class="popup__close-button" onclick="setPopup('none')">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+
+                    <div class="popup__content">
+                        <div class="popup__title">Фильтр</div>
+                        <div class="popup__item">
+                            <label class="input input_sort" data-sort="upper">
+                                <div class="input__label">Id</div>
+                                <input type="text" class="input__value browser-default" placeholder="42" />
+                                <div class="input__sort">
+                                    <span class="input-sort__lower" tooltip="По возрастанию">
+                                        <i class="fa-solid fa-arrow-down-1-9"></i> 
+                                    </span>
+                                    <span class="input-sort__upper" tooltip="По убыванию">
+                                        <i class="fa-solid fa-arrow-up-9-1"></i>  
+                                    </span>
+                                    <span class="input-sort__none" tooltip="Нет сортировки">
+                                        <i class="fa-solid fa-right-left"></i>
+                                    </span>                                      
+                                </div>
+                            </label>
+                        </div>
+                        <div class="popup__item">
+                            <label class="input input_sort" data-sort="none">
+                                <div class="input__label">Фамилия</div>
+                                <input type="text" class="input__value browser-default" placeholder="Иванов" />
+                                <div class="input__sort">
+                                    <span class="input-sort__lower" tooltip="По возрастанию">
+                                        <i class="fa-solid fa-arrow-down-a-z"></i>
+                                    </span>
+                                    <span class="input-sort__upper" tooltip="По убыванию">
+                                        <i class="fa-solid fa-arrow-up-z-a"></i>
+                                    </span>
+                                    <span class="input-sort__none" tooltip="Нет сортировки">
+                                        <i class="fa-solid fa-right-left"></i>
+                                    </span>
+                                </div>
+                            </label>
+                            <label class="input input_sort" data-sort="upper">
+                                <div class="input__label">Имя</div>
+                                <input type="text" class="input__value browser-default" placeholder="Иван" />
+                                <div class="input__sort">
+                                    <span class="input-sort__lower" tooltip="По возрастанию">
+                                        <i class="fa-solid fa-arrow-down-a-z"></i>
+                                    </span>
+                                    <span class="input-sort__upper" tooltip="По убыванию">
+                                        <i class="fa-solid fa-arrow-up-z-a"></i>
+                                    </span>
+                                    <span class="input-sort__none" tooltip="Нет сортировки">
+                                        <i class="fa-solid fa-right-left"></i>
+                                    </span>
+                                </div>
+                            </label>
+                            <label class="input input_sort" data-sort="lower">
+                                <div class="input__label">Отчество</div>
+                                <input type="text" class="input__value browser-default" placeholder="Иванович" />
+                                <div class="input__sort">
+                                    <span class="input-sort__lower" tooltip="По возрастанию">
+                                        <i class="fa-solid fa-arrow-down-a-z"></i>
+                                    </span>
+                                    <span class="input-sort__upper" tooltip="По убыванию">
+                                        <i class="fa-solid fa-arrow-up-z-a"></i>
+                                    </span>
+                                    <span class="input-sort__none" tooltip="Нет сортировки">
+                                        <i class="fa-solid fa-right-left"></i>
+                                    </span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">Компания</div>
+                                <input type="text" class="input__value browser-default" placeholder="Apple" />
+                                <div class="input__list">
+                                    <div class="input__case">Google</div>
+                                    <div class="input__case">Amazon</div>
+                                    <div class="input__case">Microsoft</div>
+                                </div>
+                            </label>
+                            <label class="input">
+                                <div class="input__label">Отдел</div>
+                                <input type="text" class="input__value browser-default" placeholder="UI UX" />
+                                <div class="input__list">
+                                    <div class="input__case">UI</div>
+                                    <div class="input__case">UX</div>
+                                    <div class="input__case">Deep learning</div>
+                                    <div class="input__case">Big data</div>
+                                    <div class="input__case">Jango</div>
+                                    <div class="input__case">Menager</div>
+                                </div>
+                            </label>
+                            <label class="input">
+                                <div class="input__label">Группа</div>
+                                <input type="text" class="input__value browser-default" placeholder="Работник" />
+                                <div class="input__list">
+                                    <div class="input__case">Охраник</div>
+                                    <div class="input__case">Директор</div>
+                                    <div class="input__case">Бугалтер</div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">От</div>
+                                <input type="text" class="input__value browser-default" placeholder="dd.mm.yyyy" />
+                            </label>
+                            <label class="input">
+                                <div class="input__label">До</div>
+                                <input type="text" class="input__value browser-default" placeholder="dd.mm.yyyy" />
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="popup__footer">
+                        <div class="popup__item popup__buttons filtet-popup__buttons">
+                            <button class="popup__button" onclick="setPopup('none')">Отменить</button>
+                            <button class="popup__button" onclick="setPopup('none')">Применить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup create-popup">
+                <div class="popup__body create-popup__body">
+                    <div class="popup__close">
+                        <div class="popup__close-button" onclick="setPopup('none')">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+
+                    <div class="popup__content">
+                        <div class="popup__title">Создание пользователя</div>
+
+                        <div class="popup__subtitle">Информация</div>
+
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">Фамилия</div>
+                                <input type="text" class="input__value browser-default" placeholder="Иванов" />
+                            </label>
+                            <label class="input">
+                                <div class="input__label">Имя</div>
+                                <input type="text" class="input__value browser-default" placeholder="Иван" />
+                            </label>
+                            <label class="input">
+                                <div class="input__label">Отчество</div>
+                                <input type="text" class="input__value browser-default" placeholder="Иванович" />
+                            </label>
+                        </div>
+
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">Компания</div>
+                                <input type="text" class="input__value browser-default" placeholder="Apple" />
+                                <div class="input__list">
+                                    <div class="input__case">Google</div>
+                                    <div class="input__case">Amazon</div>
+                                    <div class="input__case">Microsoft</div>
+                                </div>
+                            </label>
+                            <label class="input">
+                                <div class="input__label">Отдел</div>
+                                <input type="text" class="input__value browser-default" placeholder="UI UX" />
+                                <div class="input__list">
+                                    <div class="input__case">UI</div>
+                                    <div class="input__case">UX</div>
+                                    <div class="input__case">Deep learning</div>
+                                    <div class="input__case">Big data</div>
+                                    <div class="input__case">Jango</div>
+                                    <div class="input__case">Menager</div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">E-mail</div>
+                                <input type="text" class="input__value browser-default" placeholder="example@gmail.com" />
+                            </label>
+                            <label class="input">
+                                <div class="input__label">Телефон</div>
+                                <input type="text" class="input__value browser-default" placeholder="+370000000000" />
+                            </label>
+                        </div>
+
+                        <div class="popup__item">
+                            <label class="input popup__description">
+                                <div class="input__label">Описание</div>
+                                <textarea type="text" class="input__value input__text browser-default" placeholder="Некоторый текст"></textarea>
+                            </label>
+                        </div>
+
+                        <div class="popup__subtitle">Предпочитаемый язык интерфейса</div>
+
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">Язык</div>
+                                <input type="text" class="input__value browser-default" placeholder="Русский" />
+                                <div class="input__list">
+                                    <div class="input__case">Русский</div>
+                                    <div class="input__case">Украинский</div>
+                                    <div class="input__case">Английский</div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="popup__subtitle">Период действия записи</div>
+
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">От</div>
+                                <input type="text" class="input__value browser-default" placeholder="dd.mm.yyyy" />
+                            </label>
+                            <label class="input">
+                                <div class="input__label">До</div>
+                                <input id="user-popup-create-end-data" type="text" class="input__value browser-default" placeholder="dd.mm.yyyy" />
+                            </label>
+                        </div>
+
+                        <div class="poup__item">
+                            <label id="user-popup-create-delete" class="popup__chek hide">
+                                <input type="checkbox" class="filled-in" />
+                                <span></span>
+                                <div class="chek__label">Удалить по истечению</div>
+                            </label>
+                        </div>
+
+                        <div class="popup__subtitle">Доступ</div>
+
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">Полномочия</div>
+                                <input type="text" class="input__value browser-default" placeholder="Пользователь" />
+                                <div class="input__list">
+                                    <div class="input__case">Пользователь</div>
+                                    <div class="input__case">Администратор</div>
+                                    <div class="input__case">Груповой Адмн.</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="popup__footer">
+                        <div class="popup__item popup__buttons">
+                            <div class="popop__remove">Удален</div>
+                            <button class="popup__button" onclick="setPopup('none')" >Отмена</button>
+                            <button class="popup__button" onclick="setPopup('none')" >Применить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup edit-popup">
+                <div class="popup__body">
+                    <div class="popup__close">
+                        <div class="popup__close-button" onclick="setPopup('none')">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+
+                    <div class="popup__content">
+                        <div class="popup__title">Редактирование пользователя</div>
+                    
+                        <div class="popup__subtitle">Информация</div>
+
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">Фамилия</div>
+                                <input type="text" class="input__value browser-default" placeholder="Иванов" />
+                            </label>
+                            <label class="input">
+                                <div class="input__label">Имя</div>
+                                <input type="text" class="input__value browser-default" placeholder="Иван" />
+                            </label>
+                            <label class="input">
+                                <div class="input__label">Отчество</div>
+                                <input type="text" class="input__value browser-default" placeholder="Иванович" />
+                            </label>
+                        </div>
+
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">Компания</div>
+                                <input type="text" class="input__value browser-default" placeholder="Apple" />
+                                <div class="input__list">
+                                    <div class="input__case">Google</div>
+                                    <div class="input__case">Amazon</div>
+                                    <div class="input__case">Microsoft</div>
+                                </div>
+                            </label>
+                            <label class="input">
+                                <div class="input__label">Отдел</div>
+                                <input type="text" class="input__value browser-default" placeholder="UI UX" />
+                                <div class="input__list">
+                                    <div class="input__case">UI</div>
+                                    <div class="input__case">UX</div>
+                                    <div class="input__case">Deep learning</div>
+                                    <div class="input__case">Big data</div>
+                                    <div class="input__case">Jango</div>
+                                    <div class="input__case">Menager</div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">E-mail</div>
+                                <input type="text" class="input__value browser-default" placeholder="example@gmail.com" />
+                            </label>
+                            <label class="input">
+                                <div class="input__label">Телефон</div>
+                                <input type="text" class="input__value browser-default" placeholder="+370000000000" />
+                            </label>
+                        </div>
+
+                        <div class="popup__item">
+                            <label class="input popup__description">
+                                <div class="input__label">Описание</div>
+                                <textarea type="text" class="input__value input__text browser-default" placeholder="Некоторый текст"></textarea>
+                            </label>
+                        </div>
+
+                        <div class="popup__subtitle">Предпочитаемый язык интерфейса</div>
+
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">Язык</div>
+                                <input type="text" class="input__value browser-default" placeholder="Русский" />
+                                <div class="input__list">
+                                    <div class="input__case">Русский</div>
+                                    <div class="input__case">Украинский</div>
+                                    <div class="input__case">Английский</div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="popup__subtitle">Период действия записи</div>
+
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">От</div>
+                                <input type="text" class="input__value browser-default" placeholder="dd.mm.yyyy" />
+                            </label>
+                            <label class="input">
+                                <div class="input__label">До</div>
+                                <input type="text" class="input__value browser-default" placeholder="dd.mm.yyyy" />
+                            </label>
+                        </div>
+
+                        <div class="poup__item">
+                            <label class="popup__chek">
+                                <input type="checkbox" class="filled-in" />
+                                <span></span>
+                                <div class="chek__label">Удалить по истечению</div>
+                            </label>
+                        </div>
+
+                        <div class="popup__subtitle">Доступ</div>
+
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">Логин</div>
+                                <input type="text" class="input__value browser-default" placeholder="User" />
+                            </label>
+                            <label class="input input_hide">
+                                <div class="input__label">Пароль</div>
+                                <input type="password" class="input__value browser-default" placeholder="password" />
+                                <div class="input__show">
+                                    <i class="fa-solid fa-eye"></i>
+                                </div>
+                            </label>
+                            <div class="popup__subbutton mail-button z-depth-1" tooltip="Отправить данные">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                        </div> 
+
+                        <div class="popup__item">
+                            <label class="input">
+                                <div class="input__label">Полномочия</div>
+                                <input type="text" class="input__value browser-default" placeholder="Пользователь" />
+                                <div class="input__list">
+                                    <div class="input__case">Пользователь</div>
+                                    <div class="input__case">Администратор</div>
+                                    <div class="input__case">Груповой Адмн.</div>
+                                </div>
+                            </label>
+
+                            <label class="input input_hide">
+                                <div class="input__label">Пин-код</div>
+                                <input type="password" class="input__value browser-default" placeholder="0000" />
+                                <div class="input__show">
+                                    <i class="fa-solid fa-eye"></i>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="popup__subtitle">Групы</div>
+
+                        <div class="popup__item group-list">
+                            <label class="input group-list__add">
+                                <input type="text" class="input__value browser-default" placeholder="Добавить" />
+                                <div class="input__list">
+                                    <div class="input__case">Охраник</div>
+                                    <div class="input__case">Работник</div>
+                                    <div class="input__case">Бугалтер</div>
+                                </div>
+                            </label>
+
+                            <div class="group-list__item">
+                                <div>Менеджер</div>
+                                <div class="group-list__dismis">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="popup__subtitle">Ключи</div>
+
+                        <div class="popup__item popup-keys-list">
+                            <div class="popup-key">
+                                <div class="popup-key__name">Key007</div>
+                                <div class="popup-key__id">42</div>
+                                <div class="popup-key__type">Чип</div>
+                                <div class="popup-key__button">
+                                    <button class="popup-key__button-remove" tooltip="Открепить">
+                                        <i class="fa-solid fa-link-slash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="popup-key">
+                                <div class="popup-key__name">Key007</div>
+                                <div class="popup-key__id">42</div>
+                                <div class="popup-key__type">Чип</div>
+                                <div class="popup-key__button">
+                                    <button class="popup-key__button-remove" tooltip="Открепить">
+                                        <i class="fa-solid fa-link-slash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="popup-key">
+                                <div class="popup-key__name">Key007</div>
+                                <div class="popup-key__id">42</div>
+                                <div class="popup-key__type">Чип</div>
+                                <div class="popup-key__button">
+                                    <button class="popup-key__button-remove" tooltip="Открепить">
+                                        <i class="fa-solid fa-link-slash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="popup-keys" data-content="none">
+                            <div class="popup__item popup-keys-list popup-keys__exist">
+                                <div class="popup-key">
+                                    <div class="popup-key__name">Key007</div>
+                                    <div class="popup-key__id">42</div>
+                                    <div class="popup-key__type">Чип</div>
+                                    <div class="popup-key__button">
+                                        <button class="popup-key__button-add" tooltip="Прикрепить">
+                                            <i class="fa-solid fa-link"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="popup-key">
+                                    <div class="popup-key__name">Key007</div>
+                                    <div class="popup-key__id">42</div>
+                                    <div class="popup-key__type">Чип</div>
+                                    <div class="popup-key__button">
+                                        <button class="popup-key__button-add" tooltip="Прикрепить">
+                                            <i class="fa-solid fa-link"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="popup-key">
+                                    <div class="popup-key__name">Key007</div>
+                                    <div class="popup-key__id">42</div>
+                                    <div class="popup-key__type">Чип</div>
+                                    <div class="popup-key__button">
+                                        <button class="popup-key__button-add" tooltip="Прикрепить">
+                                            <i class="fa-solid fa-link"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="popup-keys__scan">
+                                <div class="popup__item">
+                                    <label class="input">
+                                        <div class="input__label">Считыватель</div>
+                                        <input type="text" class="input__value browser-default" placeholder="AXD-7" value="все"/>
+                                        <div class="input__list">
+                                            <div class="input__case">Все</div>
+                                            <div class="input__case">AXD-1</div>
+                                            <div class="input__case">AXD-2</div>
+                                            <div class="input__case">AXD-4</div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="popup__item popup-keys-list">
+                                    <div class="popup-key popup-key-scan">
+                                        <div class="popup-key__name">Unnamed</div>
+                                        <div class="popup-key__id">42</div>
+                                        <div class="popup-key__type">Карта</div>
+                                        <div class="popup-key__scan">AXD-1</div>
+                                        <div class="popup-key__time">09.08.2007 18:30</div>
+                                        <div class="popup-key__button">
+                                            <button class="popup-key__button-add" tooltip="Прикрепить">
+                                                <i class="fa-solid fa-link"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="popup-key popup-key-scan">
+                                        <div class="popup-key__name">Unnamed</div>
+                                        <div class="popup-key__id">42</div>
+                                        <div class="popup-key__type">Карта</div>
+                                        <div class="popup-key__scan">AXD-1</div>
+                                        <div class="popup-key__time">09.08.2007 18:30</div>
+                                        <div class="popup-key__button">
+                                            <button class="popup-key__button-add" tooltip="Прикрепить">
+                                                <i class="fa-solid fa-link"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="popup-key popup-key-scan">
+                                        <div class="popup-key__name">Unnamed</div>
+                                        <div class="popup-key__id">42</div>
+                                        <div class="popup-key__type">Карта</div>
+                                        <div class="popup-key__scan">AXD-1</div>
+                                        <div class="popup-key__time">09.08.2007 18:30</div>
+                                        <div class="popup-key__button">
+                                            <button class="popup-key__button-add" tooltip="Прикрепить">
+                                                <i class="fa-solid fa-link"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="popup-keys__new">
+                                <div class="popup__item">
+                                    <label class="input">
+                                        <div class="input__label">Тип</div>
+                                        <input type="text" class="input__value browser-default" placeholder="Карта" />
+                                        <div class="input__list">
+                                            <div class="input__case">Карта</div>
+                                            <div class="input__case">Пинкод</div>
+                                            <div class="input__case">Чип</div>
+                                        </div>
+                                    </label>
+                                    <label class="input">
+                                        <div class="input__label">Name</div>
+                                        <input type="text" class="input__value browser-default" placeholder="Key007" />
+                                    </label>
+                                    <label class="input">
+                                        <div class="input__label">ID</div>
+                                        <input type="text" class="input__value browser-default" placeholder="42" />
+                                    </label>
+                                </div>
+                                <div class="popup__item">
+                                    <button class="popup__subbutton" >Добавить</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="popup__item popup-key-add-wrap">
+                            <div class="popup-key-add">
+                                <button class="popup-key-add__button" tooltip="Добавить ключ">
+                                    <i class="fa-solid fa-plus"></i>
+                                    Добавить ключ
+                                </button>
+                                <label class="popup-key-add__list">
+                                    <div class="popup-key-add__case" data-target="exist">Добавить существующий</div>
+                                    <div class="popup-key-add__case" data-target="scan">Добавить считанный</div>
+                                    <div class="popup-key-add__case" data-target="new">Добавить в ручную</div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="popup__footer">
+                        <div class="popup__item popup__buttons">
+                            <div class="popop__remove">Удален</div>
+                            <button class="popup__button" onclick="setPopup('none')" >Отмена</button>
+                            <button class="popup__button" onclick="setPopup('none')" >Применить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const setPopup = (popup) => document.getElementById('content').setAttribute('data-popup', popup)
+    </script>
+
+    <!-- <script src="../demo.js"></script> -->
+</body>
+</html>

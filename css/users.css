@@ -1,0 +1,191 @@
+.users {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 68px fit-content(84px) 32px auto 34px;    
+    padding-bottom: 18px;
+}
+
+.users__list {
+    margin: 16px 0;
+    height: calc(100% - 34px);    
+    grid-template-columns: 1fr 1fr;
+}
+
+.user {
+    height: fit-content;
+    display: grid;
+    grid-template-areas: "select name . id"
+                         ". company . ."
+                         ". branch . ."
+                         ". time . ."
+                         ". group group ."
+                         "remove . . control" ;
+        
+    grid-template-columns: 48px auto auto auto;
+
+    width: 100%;
+}
+
+.user_remove {
+    background-color: #f0f0f0;
+}
+
+.user__name { 
+    grid-area: name; 
+}
+
+.user__select {
+    grid-area: select;
+    padding-top: 4px;
+    padding-left: 12px;
+}
+
+.user__id {
+    grid-area: id;
+    text-align: right;
+    font-size: 18px;
+    color: #889397;
+}
+
+.user__time { 
+    grid-area: time;
+
+    padding-top: 4px;
+    padding-bottom: 8px;
+
+    font-size: 14px;
+    color: #889397;    
+}
+
+.user__groups {
+    grid-area: group;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    max-height: 50px;   
+    margin: 0 -4px;    
+    margin-bottom: 16px;    
+    padding-bottom: 24px;
+}
+
+.user-groups__item {
+    padding: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    padding-bottom: 24px;
+}
+
+.user-groups__more {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 12px;
+    font-weight: 700;
+    color: #001e2b;
+    padding: 0 4px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    user-select: none;
+    border: none;
+    background-color: transparent;
+}
+
+.user-groups__more:hover {
+    color: #00897b;
+}
+
+.user-groups__more:disabled {
+    color: #001e2b;
+    cursor: default;
+}
+
+.user__company { 
+    grid-area: company; 
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.user__branch { 
+    grid-area: branch;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.user__remove { 
+    grid-area: remove;
+
+    cursor: pointer;
+    color: #ee6e73;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: flex-end;
+}
+
+.user__control { 
+    grid-area: control; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 -4px;
+}
+
+.user__button {
+    width: 28px;
+    height: 28px;
+
+    margin: 0 4px;
+}
+
+.user_remove .user__button { background-color: #FFF; }
+
+.user__button-restore { display: none; }
+
+.user_remove .user__button-restore { display: flex; }
+.user_remove .user__button-edit { display: none; }
+.user_remove .user__button-remove { display: none; }
+
+.user__button-remove:hover { background-color: #ee6e73; }
+.user__button-edit:hover { background-color: #00897b; }
+.user__button-restore:hover { background-color: #00897b; }
+
+
+.group-list {
+    flex-wrap: wrap;
+}
+
+.group-list__add .input__list {
+    top: 38px;
+}
+
+.group-list__item {
+    border: none;
+    padding: 8px 16px;
+    margin: 0 4px;
+    font-size: 12px;
+    background-color: transparent;
+    border-radius: 8px;
+    color: #183153;
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    margin-bottom: 8px;
+
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 1;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+}
+
+.group-list__dismis {
+    margin-left: 12px;
+    cursor: pointer;
+    transition: all ease 0.4s;
+}
+
+.group-list__dismis:hover {
+    color: #ee6e73;
+}

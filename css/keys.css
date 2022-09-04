@@ -1,0 +1,93 @@
+.keys {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 68px fit-content(84px) 32px auto 34px;    
+    padding-bottom: 18px;
+}
+
+.keys__list {
+    margin: 16px 0;
+    height: calc(100% - 34px);    
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.key {
+    height: fit-content;
+    display: grid;
+    grid-template-areas: "select name id"
+                         ". type ."
+                         "user . control" ;
+    
+    grid-template-columns: 48px auto auto;
+    width: 100%;
+}
+
+.key__select {
+    grid-area: select;
+    padding-top: 4px;
+    padding-left: 12px;
+}
+
+.key__name {
+    grid-area: name;
+}
+
+.key__id {
+    grid-area: id;
+    text-align: right;
+    font-size: 18px;
+}
+
+.key__type {
+    grid-area: type;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: -8px;
+}
+
+.key__user {
+    grid-area: user;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 18px;
+    display: flex;
+    align-self: center;
+    justify-content: flex-start;
+    padding-left: 24px;
+}
+
+.key__user-remove {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin-right: 12px;
+    padding-top: 2px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.key__user-remove:hover {
+    color: #ee6e73;
+}
+
+.key__control {
+    grid-area: control;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin: 0 -4px;
+}
+
+.key__button {
+    width: 28px;
+    height: 28px;
+    margin: 0 4px;
+}
+
+.key__button-remove:hover {
+    background-color: #ee6e73;
+}
+
+.key__button-edit:hover {
+    background-color: #00897b;
+}
