@@ -26,7 +26,7 @@
             <div class="content__title">Настройки</div>
 
             <div class="content__list settings__list">
-                <div class="card setting">
+                <div class="card setting setting-user">
                     <div class="card__title">Пользователи и ключи</div>
 
                     <div class="setting__content">
@@ -283,7 +283,7 @@
                     </div>
                 </div>
 
-                <div class="card setting">
+                <div class="card setting setting-alarm">
                     <div class="card__title">Настройки тревоги</div>
 
                     <div class="setting__content">
@@ -472,7 +472,7 @@
                     </div>
                 </div>
 
-                <div class="card setting">
+                <div class="card setting setting-security">
                     <div class="card__title">Безопасность</div>
 
                     <div class="setting__content">
@@ -674,44 +674,7 @@
                     </div>
                 </div>
 
-                <div class="card setting">
-                    <div class="card__title">Расписания и права доступа</div>
-
-                    <div class="setting__item">
-                        <div class="setting__title">Настройки календаря</div>
-
-                        <div class="setting__radio-group">
-                            <label class="radio setting__check">
-                                <input type="checkbox" class="filled-in" checked="checked" />
-                                <span>
-                                    <div class="radio__label">Рабочии дни</div>
-                                </span>
-                            </label>
-                            <label class="radio setting__check">
-                                <input type="checkbox" class="filled-in" checked="checked" />
-                                <span>
-                                    <div class="radio__label">Выходные</div>
-                                </span>
-                            </label>
-                            <label class="radio setting__check">
-                                <input type="checkbox" class="filled-in" checked="checked" />
-                                <span>
-                                    <div class="radio__label">Праздничные дни</div>
-                                </span>
-                            </label>
-                            <label class="radio setting__check">
-                                <input type="checkbox" class="filled-in" checked="checked" />
-                                <span>
-                                    <div class="radio__label">Дни перед выходным</div>
-                                </span>
-                            </label>
-                            
-                            <a class="setting__link" href="">Настроить календарь</a>
-                        </div>                            
-                    </div>
-                </div>
-
-                <div class="card setting">
+                <div class="card setting setting-mail">
                     <div class="card__title">Электронная почта</div>
 
                     <div class="setting__content">
@@ -766,7 +729,44 @@
                     </div>
                 </div>
 
-                <div class="card setting">
+                <div class="card setting setting-timetable">
+                    <div class="card__title">Расписания и права доступа</div>
+
+                    <div class="setting__item">
+                        <div class="setting__title">Настройки календаря</div>
+
+                        <div class="setting__radio-group">
+                            <label class="radio setting__check">
+                                <input type="checkbox" class="filled-in" checked="checked" />
+                                <span>
+                                    <div class="radio__label">Рабочии дни</div>
+                                </span>
+                            </label>
+                            <label class="radio setting__check">
+                                <input type="checkbox" class="filled-in" checked="checked" />
+                                <span>
+                                    <div class="radio__label">Выходные</div>
+                                </span>
+                            </label>
+                            <label class="radio setting__check">
+                                <input type="checkbox" class="filled-in" checked="checked" />
+                                <span>
+                                    <div class="radio__label">Праздничные дни</div>
+                                </span>
+                            </label>
+                            <label class="radio setting__check">
+                                <input type="checkbox" class="filled-in" checked="checked" />
+                                <span>
+                                    <div class="radio__label">Дни перед выходным</div>
+                                </span>
+                            </label>
+                            
+                            <a class="setting__link" href="">Настроить календарь</a>
+                        </div>                            
+                    </div>
+                </div>
+
+                <div class="card setting setting-system">
                     <div class="card__title">Программное обеспечение</div>
 
                     <div class="setting__content">
@@ -786,14 +786,36 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
 
             
             <div class="content__controls">
-                <button class="controls__button">Создать резервную копию</button>
-                <button class="controls__button">Обновить ПО</button>
-                <button class="controls__button">Запустить мастер конфигурирования</button>
+                <button class="controls__button">
+                    <div class="controls-button__icon">
+                        <i class="fa-solid fa-download"></i>
+                    </div>
+                    <div class="controls-button__text">
+                        Создать резервную копию
+                    </div>                    
+                </button>
+                <button class="controls__button">
+                    <div class="controls-button__icon">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+                    <div class="controls-button__text">
+                        Обновить ПО
+                    </div>       
+                </button>
+                <button class="controls__button">
+                    <div class="controls-button__icon">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <div class="controls-button__text">
+                        Запустить мастер конфигурирования
+                    </div>                     
+                </button>
             </div>
 
             <div class="popup filter-popup">

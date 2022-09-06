@@ -38,6 +38,8 @@ button {
 .input__value {
     width: 144px;
     min-width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     margin-top: 4px;
     padding: 0;
@@ -68,6 +70,8 @@ button {
     top: 54px;
     display: none;
     width: calc(100% + 4px);
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     max-height: 120px;
     overflow-y: auto;
@@ -192,11 +196,29 @@ button {
     min-width: 420px;
     overflow-x: hidden;
     position: relative;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 100%;
     grid-template-columns: 100%;
+    -ms-grid-rows: 0% 100% 0%;
     grid-template-rows: 0% 100% 0%;
     background-color: transparent;
     padding: 8px 0;
+}
+
+.popup__body > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+.popup__body > *:nth-child(2) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+}
+
+.popup__body > *:nth-child(3) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
 }
 
 .popup__content {
@@ -219,7 +241,8 @@ button {
     top: 8px;
     bottom: 8px;
     content: '';
-    box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 30%);
+    -webkit-box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 30%);
+            box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 30%);
 } 
 
 .popup__footer {
@@ -412,14 +435,22 @@ button {
 }
 
 .card__button { 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     border: 1px solid #999;
     border-radius: 4px;
     font-size: 12px;
     color: #464c4f;
     background-color: #f0f0f0;
+    -webkit-transition: 0.4s ease all;
+    -o-transition: 0.4s ease all;
     transition: 0.4s ease all;
 }
 
@@ -428,7 +459,8 @@ button {
 .card__button:hover {
     color: #FFF;
     cursor: pointer;
-    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+    -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+            box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
 }
 
 .radio span {
@@ -445,7 +477,9 @@ button {
     color: #464c4f;
     font-size: 12px;
     font-weight: 700;
-    transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
+        -ms-transform: translateY(-2px);
+            transform: translateY(-2px);
 }
 
 

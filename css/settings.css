@@ -1,35 +1,84 @@
 .settings {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 100%;
     grid-template-columns: 100%;
+    -ms-grid-rows: 68px auto 34px;
     grid-template-rows: 68px auto 34px;    
     padding-bottom: 18px;    
+}.settings > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;    
+}.settings > *:nth-child(2) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;    
+}.settings > *:nth-child(3) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;    
 }
 
 .settings__list {
-    margin: 16px 0;
-    height: calc(100% - 34px);    
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
+    margin: 0;
+    margin-bottom: 8px;
+    height: calc(100% - 8px);    
+    display: -ms-grid;    
+    display: grid;
+    max-width: 100%;
+    grid-auto-flow: row;
+    overflow-x: scroll;
+    -ms-grid-columns: minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(50%, 1fr) minmax(50%, 1fr);
+    grid-template-columns: minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(50%, 1fr) minmax(50%, 1fr);
+    -ms-grid-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+        grid-template-areas: 'user alarm security mail mail'
+                         'user alarm security timetable po';
 }
 
 .setting {
-    flex-shrink: 0;
-    height: fit-content;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    height: 100%;
     max-height: calc(100% - 8px);
-    overflow-y: auto;
+    overflow-y: hidden;
 
     width: 100%;   
+    display: -ms-grid;   
+    display: grid;
+    -ms-grid-columns: 100%;
+    grid-template-columns: 100%;
+    -ms-grid-rows: 28px auto;
+    grid-template-rows: 28px auto;
 }
+
+.setting > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+.setting > *:nth-child(2) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+}
+
+.setting-user { -ms-grid-row: 1; -ms-grid-row-span: 2; -ms-grid-column: 1; grid-area: user; }
+.setting-alarm { -ms-grid-row: 1; -ms-grid-row-span: 2; -ms-grid-column: 2; grid-area: alarm; }
+.setting-security { -ms-grid-row: 1; -ms-grid-row-span: 2; -ms-grid-column: 3; grid-area: security; }
+.setting-mail { -ms-grid-row: 1; -ms-grid-column: 4; -ms-grid-column-span: 2; grid-area: mail; }
+.setting-timetable { -ms-grid-row: 2; -ms-grid-column: 4; grid-area: timetable; }
+.setting-system { -ms-grid-row: 2; -ms-grid-column: 5; grid-area: po; }
+
 
 .setting__content {
     width: 100%;
     margin-top: 12px;
+    overflow-y: auto;
 }
 
 .setting__row {
     width: 100%;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr; 
     margin: 0 -4px;
 }
@@ -56,7 +105,9 @@
 }
 
 .setting__check .radio__label {
-    transform: translateY(-4px);
+    -webkit-transform: translateY(-4px);
+        -ms-transform: translateY(-4px);
+            transform: translateY(-4px);
 }
 
 .radio.setting__check  span {
@@ -71,6 +122,8 @@
 .setting__input {
     margin: 0 4px;
     min-width: 144px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -84,9 +137,108 @@
     font-size: 14px;
     font-weight: 700;
     color: #001e2b;
+    -webkit-transition: 0.4s all ease;
+    -o-transition: 0.4s all ease;
     transition: 0.4s all ease;
 }
 
 .setting__link:hover {
     color: #00897b;
+}
+
+@media only screen and (max-width: 992px) {
+    .controls-button__icon { display: block; }
+    .controls-button__text { display: none; }
+
+    .setting__row {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr; 
+    }
+
+    .settings__list {
+        -ms-grid-columns: minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(50%, 1fr) minmax(50%, 1fr) minmax(50%, 1fr);
+        grid-template-columns: minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(50%, 1fr) minmax(50%, 1fr) minmax(50%, 1fr);
+        -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+            grid-template-areas: 'user alarm security mail timetable po';
+    }
+
+    .setting-user {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 1;
+    }
+
+    .setting-alarm {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 2;
+    }
+
+    .setting-security {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 3;
+    }
+
+    .setting-mail {
+        -ms-grid-row: 1;
+        -ms-grid-column: 4;
+        -ms-grid-column-span: 1;
+    }
+
+    .setting-timetable {
+        -ms-grid-row: 1;
+        -ms-grid-column: 5;
+    }
+
+    .setting-system {
+        -ms-grid-row: 1;
+        -ms-grid-column: 6;
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    .settings__list {
+        -ms-grid-columns: minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr);
+        grid-template-columns: minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr);
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    .settings__list {
+        -ms-grid-columns: minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr);
+        grid-template-columns: minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr);
+        -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+            grid-template-areas: 'user alarm security mail timetable po';
+    }
+    .setting-user {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 1;
+    }
+    .setting-alarm {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 2;
+    }
+    .setting-security {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 3;
+    }
+    .setting-mail {
+        -ms-grid-row: 1;
+        -ms-grid-column: 4;
+        -ms-grid-column-span: 1;
+    }
+    .setting-timetable {
+        -ms-grid-row: 1;
+        -ms-grid-column: 5;
+    }
+    .setting-system {
+        -ms-grid-row: 1;
+        -ms-grid-column: 6;
+    }
 }

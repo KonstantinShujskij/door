@@ -30,7 +30,7 @@
                     <i class="fa-solid fa-sliders"></i>
                 </button>
                 <div class="filter__list">
-                    <div class="filter__item filter-item_sort-lower" draggable="true">
+                    <div class="filter__item filter-item_sort-lower" draggable="true" data-key="1">
                         <div class="filter-item__sort">
                             <i class="fa-solid fa-arrow-up-z-a filter-item__sort-upper"></i>
                             <i class="fa-solid fa-arrow-down-a-z filter-item__sort-lower"></i>
@@ -38,6 +38,18 @@
                         </div>
                         <div class="filter-item__label">Имя</div>
                         <div class="filter-item__value">Василий</div>
+                        <div class="filter-item__dismis">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                    <div class="filter__item filter-item_sort-lower" draggable="true" data-key="2">
+                        <div class="filter-item__sort">
+                            <i class="fa-solid fa-arrow-up-z-a filter-item__sort-upper"></i>
+                            <i class="fa-solid fa-arrow-down-a-z filter-item__sort-lower"></i>
+                            <i class="fa-solid fa-right-left filter-item__sort-none"></i>
+                        </div>
+                        <div class="filter-item__label">Фамилия</div>
+                        <div class="filter-item__value">Иванов</div>
                         <div class="filter-item__dismis">
                             <i class="fa-solid fa-xmark"></i>
                         </div>
@@ -117,6 +129,8 @@
                         </button>
                     </div>
                 </div>
+
+                <div class="content-list__bottom"></div>
             </div>
             
             <div class="content__controls">
@@ -128,9 +142,30 @@
                         <div class="chek__label controls-chek__clear">Отмениьт выбор</div>
                     </label>
                 </div>
-                <button class="controls__button controls__button-create" onclick="setPopup('create')">Создать</button>
-                <button class="controls__button controls__button-edit" onclick="setPopup('edit')">Изменить</button>
-                <button class="controls__button controls__button-remove">Удалить</button>
+                <button class="controls__button controls__button-create" onclick="setPopup('create')">
+                    <div class="controls-button__icon">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="controls-button__text">
+                        Добавить
+                    </div>  
+                </button>
+                <button class="controls__button controls__button-edit" onclick="setPopup('edit')">
+                    <div class="controls-button__icon">
+                        <i class="fa-solid fa-pen"></i>
+                    </div>
+                    <div class="controls-button__text">
+                        Изменить
+                    </div>   
+                </button>
+                <button class="controls__button controls__button-remove">
+                    <div class="controls-button__icon">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                    <div class="controls-button__text">
+                        Удалить
+                    </div>   
+                </button>
             </div>
 
             <div class="popup filter-popup">
@@ -731,6 +766,8 @@
         const setPopup = (popup) => document.getElementById('content').setAttribute('data-popup', popup)
     </script>
 
-    <!-- <script src="../demo.js"></script> -->
+    <script src="../js/queries.js"></script>
+    <script src="../js/events.js"></script>
+    <script src="../js/users.js"></script>
 </body>
 </html>

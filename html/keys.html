@@ -136,6 +136,8 @@
                         </button>
                     </div>
                 </div>
+
+                <div class="content-list__bottom"></div>
             </div>
 
             <div class="content__controls">
@@ -147,8 +149,22 @@
                         <div class="chek__label controls-chek__clear">Отмениьт выбор</div>
                     </label>
                 </div>
-                <button class="controls__button controls__button-create" onclick="setPopup('create')">Добавить</button>
-                <button class="controls__button controls__button-remove">Удалить</button>
+                <button class="controls__button controls__button-create" onclick="setPopup('create')">
+                    <div class="controls-button__icon">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="controls-button__text">
+                        Добавить
+                    </div>  
+                </button>
+                <button class="controls__button controls__button-remove">
+                    <div class="controls-button__icon">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                    <div class="controls-button__text">
+                        Удалить
+                    </div>                      
+                </button>
             </div>
 
             <div class="popup filter-popup">
@@ -372,6 +388,8 @@
         const setPopup = (popup) => document.getElementById('content').setAttribute('data-popup', popup)
     </script>
 
-    <!-- <script src="../demo.js"></script> -->
+    <script src="../js/queries.js"></script>
+    <script src="../js/events.js"></script>
+    <script src="../js/keys.js"></script>
 </body>
 </html>

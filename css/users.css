@@ -1,25 +1,49 @@
 .users {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 100%;
     grid-template-columns: 100%;
+    -ms-grid-rows: 68px fit-content(84px) 32px auto 34px;
     grid-template-rows: 68px fit-content(84px) 32px auto 34px;    
     padding-bottom: 18px;
+}.users > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}.users > *:nth-child(2) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+}.users > *:nth-child(3) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+}.users > *:nth-child(4) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+}.users > *:nth-child(5) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
 }
 
 .users__list {
     margin: 16px 0;
     height: calc(100% - 34px);    
+    -ms-grid-columns: 1fr 1fr;    
     grid-template-columns: 1fr 1fr;
 }
 
 .user {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
+    display: -ms-grid;
     display: grid;
-    grid-template-areas: "select name . id"
+        grid-template-areas: "select name . id"
                          ". company . ."
                          ". branch . ."
                          ". time . ."
                          ". group group ."
                          "remove . . control" ;
+        
+    -ms-grid-columns: 48px auto auto auto;
         
     grid-template-columns: 48px auto auto auto;
 
@@ -31,16 +55,22 @@
 }
 
 .user__name { 
+    -ms-grid-row: 1; 
+    -ms-grid-column: 2; 
     grid-area: name; 
 }
 
 .user__select {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
     grid-area: select;
     padding-top: 4px;
     padding-left: 12px;
 }
 
 .user__id {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
     grid-area: id;
     text-align: right;
     font-size: 18px;
@@ -48,6 +78,8 @@
 }
 
 .user__time { 
+    -ms-grid-row: 4; 
+    -ms-grid-column: 2; 
     grid-area: time;
 
     padding-top: 4px;
@@ -58,10 +90,16 @@
 }
 
 .user__groups {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
     grid-area: group;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     overflow: hidden;
     max-height: 50px;   
     margin: 0 -4px;    
@@ -85,8 +123,13 @@
     color: #001e2b;
     padding: 0 4px;
     cursor: pointer;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     border: none;
     background-color: transparent;
 }
@@ -101,33 +144,51 @@
 }
 
 .user__company { 
+    -ms-grid-row: 2; 
+    -ms-grid-column: 2; 
     grid-area: company; 
     font-size: 16px;
     font-weight: 700;
 }
 
 .user__branch { 
+    -ms-grid-row: 3; 
+    -ms-grid-column: 2; 
     grid-area: branch;
     font-size: 13px;
     font-weight: 700;
 }
 
 .user__remove { 
+    -ms-grid-row: 6; 
+    -ms-grid-column: 1; 
     grid-area: remove;
 
     cursor: pointer;
     color: #ee6e73;
     font-size: 14px;
     font-weight: 700;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
 }
 
 .user__control { 
+    -ms-grid-row: 6; 
+    -ms-grid-column: 4; 
     grid-area: control; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     margin: 0 -4px;
 }
 
@@ -142,7 +203,7 @@
 
 .user__button-restore { display: none; }
 
-.user_remove .user__button-restore { display: flex; }
+.user_remove .user__button-restore { display: -webkit-box; display: -ms-flexbox; display: flex; }
 .user_remove .user__button-edit { display: none; }
 .user_remove .user__button-remove { display: none; }
 
@@ -152,7 +213,8 @@
 
 
 .group-list {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .group-list__add .input__list {
@@ -168,24 +230,40 @@
     border-radius: 8px;
     color: #183153;
     background-color: #FFF;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 34px;
     margin-bottom: 8px;
 
     font-weight: 700;
     text-transform: uppercase;
     z-index: 1;
-    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+    -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+            box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
 }
 
 .group-list__dismis {
     margin-left: 12px;
     cursor: pointer;
+    -webkit-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
     transition: all ease 0.4s;
 }
 
 .group-list__dismis:hover {
     color: #ee6e73;
+}
+
+@media only screen and (max-width: 1200px) {
+    .users__list {  
+        -ms-grid-columns: 1fr;  
+        grid-template-columns: 1fr;
+    }
 }
