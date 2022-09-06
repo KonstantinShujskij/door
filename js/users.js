@@ -4,7 +4,7 @@ window.onload = () => {
         dragItem.parentNode.removeChild(dragItem)
         dropItem.before(dragItem)
 
-        httpRequest('/sort/user', { dragItem, dropItem }) 
+        httpRequest('/sort/users', { dragItem, dropItem }) 
     })
 
     setLoadHandler(() => { httpRequest('/getdata/user') })
