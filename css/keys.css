@@ -58,6 +58,7 @@
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: name;
+    cursor: pointer;
 }
 
 .key__id {
@@ -75,6 +76,12 @@
     font-size: 13px;
     font-weight: 700;
     margin-top: -8px;
+    transition: 0.4s all ease;
+}
+
+.key__type:hover {
+    cursor: pointer;
+    color: #00897b;
 }
 
 .key__user {

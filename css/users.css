@@ -58,6 +58,7 @@
     -ms-grid-row: 1; 
     -ms-grid-column: 2; 
     grid-area: name; 
+    cursor: pointer;
 }
 
 .user__select {
@@ -134,6 +135,10 @@
     background-color: transparent;
 }
 
+.user-groups__more:focus {
+    background-color: transparent;
+}
+
 .user-groups__more:hover {
     color: #00897b;
 }
@@ -149,6 +154,7 @@
     grid-area: company; 
     font-size: 16px;
     font-weight: 700;
+    transition: 0.4s all ease;
 }
 
 .user__branch { 
@@ -157,6 +163,17 @@
     grid-area: branch;
     font-size: 13px;
     font-weight: 700;
+    transition: 0.4s all ease;
+}  
+
+.user__company:hover, .user__branch:hover {
+    color: #00897b;
+    cursor: pointer;
+}
+
+.user_remove .user__company:hover, .user_remove .user__branch:hover {
+    color: inherit;
+    cursor: default;
 }
 
 .user__remove { 

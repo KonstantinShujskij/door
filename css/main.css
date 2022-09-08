@@ -188,6 +188,7 @@ button {
     z-index: 2;
     display: none;
     padding: 24px 8px;
+    background-color: #00000033;
 }
 
 .popup__body {
@@ -227,7 +228,7 @@ button {
     overflow-x: hidden;
     padding: 24px 48px;
     padding-bottom: 90px;
-
+    max-height: calc(100vh - 68px);
 }
 
 .popup__content::before {
