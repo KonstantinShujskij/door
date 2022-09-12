@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/materialize.min.css">
+    <link rel="stylesheet" href="../css/iconsfont.css">
+    <link rel="stylesheet" href="../css/tooltip.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/calendar.css">
+</head>
+<body>
+        
+    <section id="sidebar" class="sidebar z-depth-2">
+        <a class="sidebar__item" href="settings.html">Настройки</a>
+        <a class="sidebar__item" href="users.html">Пользователи</a>
+        <a class="sidebar__item" href="keys.html">Ключи</a>
+        <a class="sidebar__item sidebar__item_active" href="calendar.html">Календарь</a>
+    </section>
+
+    <main class="main">
+        <section id="content" class="content">
+            <div class="content__title">Настройки</div>
+
+            <div id="calendar" class="calendar">
+                <div class="calendar__year">
+                    <div class="excel">
+                        <div class="calendar__item calendar__label">Год</div>
+                    </div>
+                    
+                    <div class="year">
+                        <div class="calendar__item">
+                            <i class="fa-solid fa-left-long"></i>
+                        </div>
+                        <div class="calendar__item year__value">2022</div>
+                        <div class="calendar__item">
+                            <i class="fa-solid fa-right-long"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="calendar__mounth">
+                    <div class="excel">
+                        <div class="calendar__item calendar__label">Месяц</div>
+                    </div>
+                    
+                    <div class="mounth">
+                        <div class="calendar__item">
+                            <i class="fa-solid fa-left-long"></i>
+                        </div>
+                        <div class="calendar__item mounth__value">Сентябрь</div>
+                        <div class="calendar__item">
+                            <i class="fa-solid fa-right-long"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="calendar__week">
+                    <div class="week">
+                        <div class="calendar__item">пн</div>
+                    </div>
+                    <div class="week">
+                        <div class="calendar__item">вт</div>
+                    </div>
+                    <div class="week">
+                        <div class="calendar__item">ср</div>
+                    </div>
+                    <div class="week">
+                        <div class="calendar__item">чт</div>
+                    </div>
+                    <div class="week">
+                        <div class="calendar__item">пт</div>
+                    </div>
+                    <div class="week">
+                        <div class="calendar__item">сб</div>
+                    </div>
+                    <div class="week">
+                        <div class="calendar__item">вс</div>
+                    </div>
+                </div>
+                <div class="calendar__number">
+                    <div class="number">
+                        <div class="calendar__item">1</div>
+                    </div>
+                    <div class="number">
+                        <div class="calendar__item">2</div>
+                    </div>
+                    <div class="number">
+                        <div class="calendar__item">3</div>
+                    </div>
+                    <div class="number">
+                        <div class="calendar__item">4</div>
+                    </div>
+                    <div class="number">
+                        <div class="calendar__item">5</div>
+                    </div>
+                </div>
+                <div class="calendar__days">
+                    <div class="calendar__clear"></div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">1</div>
+                            <div class="day__event-list">
+                                <div class="day__event">
+                                    <div class="event__status status-work"></div>
+                                    <div class="event__value">13.ПТ.**.****</div>
+                                    <div class="event__remove">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </div>
+                                </div>
+                                <div class="day__event">
+                                    <div class="event__status status-work"></div>
+                                    <div class="event__value">04.08.2022</div>
+                                    <div class="event__remove">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="day__status-list">
+                                <div class="day__status status-work"></div>
+                                <div class="day__status status-work"></div>
+                                <div class="day__status status-work"></div>
+                                <div class="day__status status-work"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">2</div>
+                            <div class="day__event-list">
+                                <div class="day__event">
+                                    <div class="event__status status-work"></div>
+                                    <div class="event__value">13.ПТ.**.****</div>
+                                    <div class="event__remove">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="day__status-list">
+                                <div class="day__status status-work"></div>
+                                <div class="day__status status-work"></div>
+                                <div class="day__status status-work"></div>
+                                <div class="day__status status-work"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">3</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">4</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">5</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">6</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">7</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">8</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">9</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">10</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">11</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">12</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">13</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">14</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">15</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">16</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">17</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">18</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">19</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">20</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">21</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">22</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">23</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">24</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">25</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">26</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">27</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">28</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">29</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day">
+                        <div class="day__wrap">
+                            <div class="day__num">30</div>
+                            <div class="day__event-list">
+
+                            </div>
+                            <div class="day__status-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                   
+
+                </div>
+            </div> 
+        </section>
+    </main>
+
+    <script src="../js/calendar.js"></script>
+</body>
+</html>

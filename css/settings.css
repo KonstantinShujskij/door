@@ -6,15 +6,6 @@
     -ms-grid-rows: 68px auto 34px;
     grid-template-rows: 68px 28px auto 34px;    
     padding-bottom: 18px;    
-}.settings > *:nth-child(1) {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;    
-}.settings > *:nth-child(2) {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;    
-}.settings > *:nth-child(3) {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;    
 }
 
 .setting__menu {
@@ -49,12 +40,11 @@
     max-width: 100%;
     grid-auto-flow: row;
     overflow-x: scroll;
-    -ms-grid-columns: minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(50%, 1fr) minmax(50%, 1fr);
-    grid-template-columns: minmax(100%, 1fr) minmax(100%, 1fr) minmax(100%, 1fr) minmax(50%, 1fr) minmax(50%, 1fr);
+    grid-template-columns: minmax(100%, 1fr) minmax(100%, 1fr) minmax(50%, 1fr) minmax(50%, 1fr);
     -ms-grid-rows: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-        grid-template-areas: 'user alarm security mail mail'
-                         'user alarm security timetable po';
+        grid-template-areas: 'user security mail mail'
+                         'user security timetable timetable';
 }
 
 .setting {

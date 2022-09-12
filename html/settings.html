@@ -27,11 +27,11 @@
 
             <div class="info-bar setting__menu">
                 <a class="settings__link settings__link_active" href="#setting-user" data-scroll="user">Пользователи</a>
-                <a class="settings__link" href="#setting-alarm" data-scroll="alarm">Тревога</a>
+                <!-- <a class="settings__link" href="#setting-alarm" data-scroll="alarm">Тревога</a> -->
                 <a class="settings__link" href="#setting-security" data-scroll="security">Безопасность</a>
                 <a class="settings__link" href="#setting-mail" data-scroll="mail">Почта</a>
                 <a class="settings__link" href="#setting-timetable" data-scroll="timetable">Календарь</a>
-                <a class="settings__link" href="#setting-system" data-scroll="system">Система</a>
+                <!-- <a class="settings__link" href="#setting-system" data-scroll="system">Система</a> -->
             </div>
 
             <div id="settings-list" class="content__list settings__list">
@@ -292,7 +292,7 @@
                     </div>
                 </div>
 
-                <div id="setting-alarm" class="card setting setting-alarm" data-scrollspy="alarm">
+                <!-- <div id="setting-alarm" class="card setting setting-alarm" data-scrollspy="alarm">
                     <div class="card__title setting__name">Настройки тревоги</div>
 
                     <div class="setting__content">
@@ -479,7 +479,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div id="setting-security" class="card setting setting-security" data-scrollspy="security">
                     <div class="card__title setting__name">Безопасность</div>
@@ -626,6 +626,44 @@
              
                         <div class="setting__row">
                             <div class="setting__item">
+                                <div class="setting__title">Действия при снятии тревоги</div>
+
+                                <div class="setting__radio-group">
+                                    <label class="radio setting__radio">
+                                        <input name="use-alarm-action" type="radio" checked />
+                                        <span>
+                                            <div class="radio__label">Ничего не делать</div>
+                                        </span>
+                                    </label>
+                                    <label class="radio setting__radio">
+                                        <input name="use-alarm-action" type="radio" />
+                                        <span>
+                                            <div class="radio__label">Вернуть двери в состояние до тревоги</div>
+                                        </span>
+                                    </label>
+                                </div>                            
+                            </div>
+
+                            <div class="setting__item">
+                                <div class="setting__title">Настройка антипассбэк</div>
+
+                                <div class="setting__radio-group">
+                                    <label class="radio setting__radio">
+                                        <input name="use-passback" type="radio" checked />
+                                        <span>
+                                            <div class="radio__label">Включен</div>
+                                        </span>
+                                    </label>
+                                    <label class="radio setting__radio">
+                                        <input name="use-passback" type="radio" />
+                                        <span>
+                                            <div class="radio__label">Выключен</div>
+                                        </span>
+                                    </label>
+                                </div>                            
+                            </div>
+
+                            <div class="setting__item">
                                 <div class="setting__title">Анонимизация данных</div>
 
                                 <div class="setting__radio-group">
@@ -650,25 +688,6 @@
                                     <label class="input setting__input">
                                         <div class="input__label">Срок в днях</div>
                                         <input type="text" class="input__value browser-default" placeholder="1" />
-                                    </label>
-                                </div>                            
-                            </div>
-
-                            <div class="setting__item">
-                                <div class="setting__title">Настройка антипассбэк</div>
-
-                                <div class="setting__radio-group">
-                                    <label class="radio setting__radio">
-                                        <input name="use-passback" type="radio" checked />
-                                        <span>
-                                            <div class="radio__label">Включен</div>
-                                        </span>
-                                    </label>
-                                    <label class="radio setting__radio">
-                                        <input name="use-passback" type="radio" />
-                                        <span>
-                                            <div class="radio__label">Выключен</div>
-                                        </span>
                                     </label>
                                 </div>                            
                             </div>
@@ -768,7 +787,7 @@
                     </div>
                 </div>
 
-                <div id="setting-system" class="card setting setting-system" data-scrollspy="system">
+                <!-- <div id="setting-system" class="card setting setting-system" data-scrollspy="system">
                     <div class="card__title setting__name">Программное обеспечение</div>
 
                     <div class="setting__content">
@@ -787,7 +806,7 @@
                             </div>                            
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </section>

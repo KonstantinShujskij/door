@@ -1,0 +1,232 @@
+.calendar {
+    width: calc(100% - 48px);
+    margin: 24px;
+
+    display: grid;
+    grid-template-columns: auto repeat(7, 1fr);
+    grid-template-rows: auto auto auto repeat(5, 1fr);
+}
+
+.calendar__year {
+    grid-row: 1 / 2;
+    grid-column: 2 / 9;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.year {
+    grid-row: 1 / 2;
+    grid-column: 2 / 9;
+}
+
+.calendar__mounth {
+    grid-row: 2 / 3;
+    grid-column: 2 / 9;
+    
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    padding-top: 4px;
+    padding-bottom: 12px;
+}
+
+.excel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+}
+
+.mounth, .year {
+    grid-row: 1 / 2;
+    grid-column: 2 / 9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar__week {
+    grid-row: 3 / 4;
+    grid-column: 2 / 9;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.week {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    padding-bottom: 8px;
+}
+
+.week .calendar__item {
+    width: 100%;
+} 
+
+.calendar__number {
+    grid-row: 4 / 9;
+    grid-column: 1 / 2;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.number {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-right: 8px;
+}
+
+.calendar__days {
+    grid-row: 4 / 9;
+    grid-column: 2 / 9;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.calendar__clear {
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
+}
+
+.day {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    padding-bottom: 8px;
+}
+
+.day__wrap {
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+
+    border-radius: 4px;
+    padding: 4px 12px;
+    background-color: #FFF;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+}
+
+.day__num {
+    color: #001e2b;
+    font-weight: 700;
+    font-size: 12px;
+    margin-right: auto;
+}
+
+.day__event-list {
+    width: 100%;
+    margin-bottom: auto;
+}
+
+.day__event {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event__status {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin-right: 4px;
+    
+}
+
+.event__value {
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #464c4f;
+    font-weight: 700;
+    margin-right: auto;
+    padding-bottom: 1px;
+}
+
+.event__remove {
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.4s all ease;
+}
+
+.event__remove:hover {
+    color: #ee6e73;
+}
+
+.day__status-list {
+    margin-top: 12px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.day__status {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin: 0 2px;
+}
+
+.day__status-list .day__status:last-child {
+    width: 24px;
+    border-radius: 2.5px;
+}
+
+.status-work {
+    background-color: #00897b;
+}
+
+.calendar__item {
+    border-radius: 4px;
+    padding: 6px 8px;
+    background-color: #FFF;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+
+    color: #001e2b;
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    height: 36px;
+    min-width: 36px;
+}
+
+.day_active .calendar__item {
+    background-color: #00897b;
+}
+
+.week_active .calendar__item { 
+    background-color: #00897b;
+}
+
+.number_active .calendar__item { 
+    background-color: #00897b;
+}
+
+.calendar__label {
+    width: 100%;
+}
+
+.mounth__value, .year__value {
+    margin: 0 8px;
+    min-width: 86px;
+}
