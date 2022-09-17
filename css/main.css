@@ -1,3 +1,22 @@
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #fff;
+} 
+::-webkit-scrollbar-thumb { 
+	border-radius: 5px;
+	background-color: #ccc;
+} 
+::-webkit-scrollbar{ 
+	width: 6px;
+    height: 6px;
+}
+
 .no-select {
     -webkit-user-select: none;
        -moz-user-select: none;

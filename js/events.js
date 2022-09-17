@@ -30,13 +30,15 @@ function setFilterItemHandler(item, handler) {
     item.addEventListener('dragover', handleDragOver)
 }
 
-function initialFilter(handler) {
-    document.querySelectorAll('.filter__item').forEach((item) => setFilterItemHandler(item, handler))
+function initialFilter(handler, root=null) {
+    if(root === null) { root = document }
+
+    root.querySelectorAll('.filter__item').forEach((item) => setFilterItemHandler(item, handler))
 }
 
 function setLoadHandler(handler, root=null, item=null) {
     if(root === null) { root = document.getElementsByClassName('content__list')[0] }
-    if(item === null) { item = document.getElementsByClassName('content-list__bottom')[0] }
+    if(item === null) { item = root.getElementsByClassName('content-list__bottom')[0] }
 
     const observer = new IntersectionObserver(([target]) => {
         if(target.isIntersecting) { handler() }
@@ -45,5 +47,14 @@ function setLoadHandler(handler, root=null, item=null) {
     observer.observe(item)
 }
 
+function initialMenu(handler) {
+    document.querySelectorAll('.menu__item').forEach((item) => {
+        item.onclick = () => {
+            document.querySelector('.menu__item_active').classList.remove('menu__item_active')
+            handler(item.getAttribute('data-target'))
+            item.classList.add('menu__item_active')
+        }
+    })
+}
 
 

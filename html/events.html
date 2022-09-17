@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/materialize.min.css">
+    <link rel="stylesheet" href="../css/iconsfont.css">
+    <link rel="stylesheet" href="../css/tooltip.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/events.css">
+</head>
+<body>
+    
+    <section id="sidebar" class="sidebar z-depth-2">
+        <a class="sidebar__item" href="settings.html">Настройки</a>
+        <a class="sidebar__item" href="users.html">Пользователи</a>
+        <a class="sidebar__item" href="keys.html">Ключи</a>
+        <a class="sidebar__item sidebar__item_active" href="events.html">События</a>
+    </section>
+
+    <main class="main">
+        <section id="content" class="content events" data-popup="none" data-content="access">
+            <div class="content__title">События</div>
+            
+            <div class="info-bar menu">
+                <a class="menu__item menu__item_active" data-target="access">Доступ</a>
+                <a class="menu__item" data-target="system">Система</a>
+            </div>
+
+            <div id="access-events" class="access-events">
+                <div class="content__filter filter">
+                    <button class="filter__button" onclick="setPopup('filter')">
+                        <i class="fa-solid fa-sliders"></i>
+                    </button>
+                    <div class="filter__list">
+                        <div class="filter__item filter-item_sort-lower" draggable="true" >
+                            <div class="filter-item__sort">
+                                <i class="fa-solid fa-arrow-up-9-1 filter-item__sort-upper"></i>
+                                <i class="fa-solid fa-arrow-up-1-9 filter-item__sort-lower"></i>
+                                <i class="fa-solid fa-right-left filter-item__sort-none"></i>
+                            </div>
+                            <div class="filter-item__label">дата-время</div>
+                        </div>   
+                    </div>
+                </div>
+
+                <div class="content__list access-events__list">
+                    <div class="card event-access">
+                        <div class="card__title event-access__type">Событие доступа</div>
+                        <div class="event-access__event">Отказ</div>
+                        <div class="event-access__user">И.И. Иванов</div>
+                        <div class="event-access__controller">Основной</div>
+                        <div class="event-access__door">Входная дверь</div>
+                        <div class="event-access__reader">Выход</div>
+                        <div class="event-access__method">Веб-интерфейс</div>
+                        <div class="event-access__data">15.12.2022 13:09:50</div>
+                    </div>
+
+                    <div class="card event-access">
+                        <div class="card__title event-access__type">Событие доступа</div>
+                        <div class="event-access__event">Успех</div>
+                        <div class="event-access__user">И.И. Иванов</div>
+                        <div class="event-access__controller">Основной</div>
+                        <div class="event-access__door">Входная дверь</div>
+                        <div class="event-access__reader">Выход</div>
+                        <div class="event-access__method">Карта</div>
+                        <div class="event-access__data">15.12.2022 13:09:50</div>
+                    </div>
+    
+                    <div class="content-list__bottom"></div>
+                </div>
+                
+                <div class="popup filter-popup">
+                    <div class="popup__body">
+                        <div class="popup__close">
+                            <div class="popup__close-button" onclick="setPopup('none')">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </div>
+
+                        <div class="popup__content">
+                            <div class="popup__title">Фильтр</div>
+                            <div class="popup__item">
+                                <label class="input" data-sort="none">
+                                    <div class="input__label">Пользователь</div>
+                                    <input type="text" class="input__value browser-default" placeholder="И.И. Иванов" />
+                                </label>
+                                <label class="input" data-sort="none">
+                                    <div class="input__label">Устройство</div>
+                                    <input type="text" class="input__value browser-default" placeholder="Door №13" />
+                                </label>
+                                <label class="input">
+                                    <div class="input__label">Тип</div>
+                                    <input type="text" class="input__value browser-default" placeholder="Событие" />
+                                    <div class="input__list">
+                                        <div class="input__case">Открывание</div>
+                                        <div class="input__case">Закрывание </div>
+                                        <div class="input__case">Тревога</div>
+                                        <div class="input__case">Снятие тревоги</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="popup__item">
+                                <label class="input">
+                                    <div class="input__label">От</div>
+                                    <input type="text" class="input__value browser-default" placeholder="dd.mm.yyyy hh:mm:ss" />
+                                </label>
+                                <label class="input">
+                                    <div class="input__label">До</div>
+                                    <input type="text" class="input__value browser-default" placeholder="dd.mm.yyyy hh:mm:ss" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="popup__footer">
+                            <div class="popup__item popup__buttons filtet-popup__buttons">
+                                <button class="popup__button" onclick="setPopup('none')">Отменить</button>
+                                <button class="popup__button" onclick="setPopup('none')">Применить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="system-events" class="system-events">
+                <div class="content__filter filter">
+                    <button class="filter__button" onclick="setPopup('filter')">
+                        <i class="fa-solid fa-sliders"></i>
+                    </button>
+                    <div class="filter__list">
+                        <div class="filter__item filter-item_sort-lower" draggable="true" >
+                            <div class="filter-item__sort">
+                                <i class="fa-solid fa-arrow-up-9-1 filter-item__sort-upper"></i>
+                                <i class="fa-solid fa-arrow-up-1-9 filter-item__sort-lower"></i>
+                                <i class="fa-solid fa-right-left filter-item__sort-none"></i>
+                            </div>
+                            <div class="filter-item__label">дата-время</div>
+                        </div>  
+                    </div>
+                </div>
+
+                <div class="content__list system-events__list">
+                    <div class="card event-system">
+                        <div class="card__title event-system__action">Добавление</div>
+                        <div class="event-system__object">
+                            <span class="event-system__let">Главный Контроллер</span>.<span class="event-system__let">Главный Вход</span>.<span class="event-system__let">BM</span>
+                        </div>
+                        <div class="event-system__user">admin</div>
+                        <div class="event-system__data">15.12.2022 13:09:50</div>
+                    </div>
+
+                    <div class="card event-system">
+                        <div class="card__title event-system__action">Изменение</div>
+                        <div class="event-system__object">
+                            <span class="event-system__let">Пользователи</span> — 
+                            <span class="event-system__let">Иванов И.И.</span>
+                        </div>
+                        <div class="event-system__user">admin</div>
+                        <div class="event-system__data">15.12.2022 13:09:50</div>
+                    </div>
+
+                    <div class="card event-system">
+                        <div class="card__title event-system__action">Удаление</div>
+                        <div class="event-system__object">
+                            <span class="event-system__let">Иванов И.И.</span> — 
+                            <span class="event-system__let">Склады</span> — 
+                            <span class="event-system__let">Кладовщики</span>
+                        </div>
+                        <div class="event-system__user">admin</div>
+                        <div class="event-system__data">15.12.2022 13:09:50</div>
+                    </div>
+
+                    <div class="card event-system">
+                        <div class="card__title event-system__action">Ошибка</div>
+                        <div class="event-system__object">Что-то пошло не так..</div>
+                        <div class="event-system__user">admin</div>
+                        <div class="event-system__data">15.12.2022 13:09:50</div>
+                    </div>
+
+                    <div class="content-list__bottom"></div>
+                </div>
+                 
+                <div class="popup filter-popup">
+                    <div class="popup__body">
+                        <div class="popup__close">
+                            <div class="popup__close-button" onclick="setPopup('none')">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </div>
+
+                        <div class="popup__content">
+                            <div class="popup__title">Фильтр</div>
+                            <div class="popup__item">
+                                <label class="input" data-sort="none">
+                                    <div class="input__label">Администратор</div>
+                                    <input type="text" class="input__value browser-default" placeholder="Admin" />
+                                </label>
+                                <label class="input">
+                                    <div class="input__label">Тип</div>
+                                    <input type="text" class="input__value browser-default" placeholder="Событие" />
+                                    <div class="input__list">
+                                        <div class="input__case">Оборудование</div>
+                                        <div class="input__case">База данных</div>
+                                        <div class="input__case">Права доступа</div>
+                                        <div class="input__case">Системы</div>
+                                        <div class="input__case">Ошибки</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="popup__item">
+                                <label class="input">
+                                    <div class="input__label">От</div>
+                                    <input type="text" class="input__value browser-default" placeholder="dd.mm.yyyy hh:mm:ss" />
+                                </label>
+                                <label class="input">
+                                    <div class="input__label">До</div>
+                                    <input type="text" class="input__value browser-default" placeholder="dd.mm.yyyy hh:mm:ss" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="popup__footer">
+                            <div class="popup__item popup__buttons filtet-popup__buttons">
+                                <button class="popup__button" onclick="setPopup('none')">Отменить</button>
+                                <button class="popup__button" onclick="setPopup('none')">Применить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        const setPopup = (popup) => {
+            document.getElementById('content').setAttribute('data-popup', popup) 
+            document.querySelectorAll('.popup__content').forEach((item) => item.scrollTop = 0)
+        }
+    </script>
+
+    <script src="../js/queries.js"></script>
+    <script src="../js/events.js"></script>
+    <script src="../js/eventsPage.js"></script>
+
+</body>
+</html>

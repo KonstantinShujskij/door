@@ -36,7 +36,7 @@
     height: fit-content;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: "select name . id"
+            grid-template-areas: "select name . id"
                          ". company . ."
                          ". branch . ."
                          ". time . ."
@@ -154,6 +154,8 @@
     grid-area: company; 
     font-size: 16px;
     font-weight: 700;
+    -webkit-transition: 0.4s all ease;
+    -o-transition: 0.4s all ease;
     transition: 0.4s all ease;
 }
 
@@ -163,6 +165,8 @@
     grid-area: branch;
     font-size: 13px;
     font-weight: 700;
+    -webkit-transition: 0.4s all ease;
+    -o-transition: 0.4s all ease;
     transition: 0.4s all ease;
 }  
 
@@ -282,5 +286,10 @@
     .users__list {  
         -ms-grid-columns: 1fr;  
         grid-template-columns: 1fr;
+    }
+
+    .content-list__bottom {
+        -ms-grid-column-span: 2;
+        grid-column-end: 2;
     }
 }

@@ -29,8 +29,7 @@
                 <a class="settings__link settings__link_active" href="#setting-user" data-scroll="user">Пользователи</a>
                 <!-- <a class="settings__link" href="#setting-alarm" data-scroll="alarm">Тревога</a> -->
                 <a class="settings__link" href="#setting-security" data-scroll="security">Безопасность</a>
-                <a class="settings__link" href="#setting-mail" data-scroll="mail">Почта</a>
-                <a class="settings__link" href="#setting-timetable" data-scroll="timetable">Календарь</a>
+                <a class="settings__link" href="#setting-mail" data-scroll="mail">Почта и Календарь</a>
                 <!-- <a class="settings__link" href="#setting-system" data-scroll="system">Система</a> -->
             </div>
 
@@ -696,14 +695,20 @@
                 </div>
 
                 <div id="setting-mail" class="card setting setting-mail" data-scrollspy="mail">
-                    <div class="card__title setting__name">Электронная почта</div>
+                    <div class="card__title setting__name">Электронная почта и расписания</div>
 
                     <div class="setting__content">
                         <div class="setting__row">
                             <div class="setting__item">
-                                <div class="setting__title">SMTP-сервер</div>
-
                                 <div class="setting__radio-group">
+                                    <label class="input setting__input">
+                                        <div class="input__label">SMTP-сервер</div>
+                                        <input type="text" class="input__value browser-default" placeholder="http://example.com" />
+                                    </label>   
+                                    <label class="input setting__input">
+                                        <div class="input__label">Порт</div>
+                                        <input type="text" class="input__value browser-default" placeholder="80" />
+                                    </label>  
                                     <label class="input setting__input">
                                         <div class="input__label">Имя пользователя</div>
                                         <input type="text" class="input__value browser-default" placeholder="Иван" />
@@ -745,45 +750,40 @@
                                     </label>
                                 </div>                            
                             </div>
-                          
+
+                            <div class="setting__item">
+                                <div class="setting__title">Настройки календаря</div>
+        
+                                <div class="setting__radio-group">
+                                    <label class="radio setting__check">
+                                        <input type="checkbox" class="filled-in" checked="checked" />
+                                        <span>
+                                            <div class="radio__label">Рабочии дни</div>
+                                        </span>
+                                    </label>
+                                    <label class="radio setting__check">
+                                        <input type="checkbox" class="filled-in" checked="checked" />
+                                        <span>
+                                            <div class="radio__label">Выходные</div>
+                                        </span>
+                                    </label>
+                                    <label class="radio setting__check">
+                                        <input type="checkbox" class="filled-in" checked="checked" />
+                                        <span>
+                                            <div class="radio__label">Праздничные дни</div>
+                                        </span>
+                                    </label>
+                                    <label class="radio setting__check">
+                                        <input type="checkbox" class="filled-in" checked="checked" />
+                                        <span>
+                                            <div class="radio__label">Дни перед выходным</div>
+                                        </span>
+                                    </label>
+                                    
+                                    <a class="setting__link" href="">Настроить календарь</a>
+                                </div>                            
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div id="setting-timetable" class="card setting setting-timetable" data-scrollspy="timetable">
-                    <div class="card__title setting__name">Расписания и права доступа</div>
-
-                    <div class="setting__item">
-                        <div class="setting__title">Настройки календаря</div>
-
-                        <div class="setting__radio-group">
-                            <label class="radio setting__check">
-                                <input type="checkbox" class="filled-in" checked="checked" />
-                                <span>
-                                    <div class="radio__label">Рабочии дни</div>
-                                </span>
-                            </label>
-                            <label class="radio setting__check">
-                                <input type="checkbox" class="filled-in" checked="checked" />
-                                <span>
-                                    <div class="radio__label">Выходные</div>
-                                </span>
-                            </label>
-                            <label class="radio setting__check">
-                                <input type="checkbox" class="filled-in" checked="checked" />
-                                <span>
-                                    <div class="radio__label">Праздничные дни</div>
-                                </span>
-                            </label>
-                            <label class="radio setting__check">
-                                <input type="checkbox" class="filled-in" checked="checked" />
-                                <span>
-                                    <div class="radio__label">Дни перед выходным</div>
-                                </span>
-                            </label>
-                            
-                            <a class="setting__link" href="">Настроить календарь</a>
-                        </div>                            
                     </div>
                 </div>
 

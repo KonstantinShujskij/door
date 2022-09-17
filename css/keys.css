@@ -36,7 +36,7 @@
     height: fit-content;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: "select name id"
+            grid-template-areas: "select name id"
                          ". type ."
                          "user . control" ;
     
@@ -76,6 +76,8 @@
     font-size: 13px;
     font-weight: 700;
     margin-top: -8px;
+    -webkit-transition: 0.4s all ease;
+    -o-transition: 0.4s all ease;
     transition: 0.4s all ease;
 }
 
@@ -152,10 +154,20 @@
     background-color: #00897b;
 }
 
+.content-list__bottom {
+    -ms-grid-column-span: 4;
+    grid-column-end: 4;
+}
+
 @media only screen and (max-width: 992px) {
     .keys__list {  
         -ms-grid-columns: 1fr 1fr;  
         grid-template-columns: 1fr 1fr;
+    }
+
+    .content-list__bottom {
+        -ms-grid-column-span: 3;
+        grid-column-end: 3;
     }
 }
 
@@ -163,5 +175,10 @@
     .keys__list {  
         -ms-grid-columns: 1fr;  
         grid-template-columns: 1fr;
+    }
+
+    .content-list__bottom {
+        -ms-grid-column-span: 2;
+        grid-column-end: 2;
     }
 }

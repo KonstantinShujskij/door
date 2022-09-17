@@ -771,7 +771,10 @@
     </main>
 
     <script>
-        const setPopup = (popup) => document.getElementById('content').setAttribute('data-popup', popup)
+        const setPopup = (popup) => {
+            document.getElementById('content').setAttribute('data-popup', popup) 
+            document.querySelectorAll('.popup__content').forEach((item) => item.scrollTop = 0)
+        }
     </script>
 
     <script src="../js/queries.js"></script>

@@ -1,13 +1,3 @@
-* {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-::-webkit-scrollbar {
-    width: 0;
-}
 
 html {
     font-size: 16px;
@@ -279,6 +269,8 @@ body {
     display: -ms-grid;
 
     display: grid;
+    grid-auto-rows: -webkit-max-content;
+    grid-auto-rows: max-content;
     grid-column-gap: 8px;
     position: relative;
 
@@ -421,7 +413,7 @@ body {
     border-radius: 4px;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: "name id"
+            grid-template-areas: "name id"
                          "type ."
                          ". button";
     
@@ -552,7 +544,7 @@ body {
 }
 
 .popup-key-scan {
-        grid-template-areas: "name id"
+            grid-template-areas: "name id"
                          "type ."
                          "scan ."
                          "time button";
@@ -662,7 +654,7 @@ body {
 .popup-keys-scan {
     min-width: 160px;
     padding-top: 12px;
-            grid-template-areas: "name id"
+                grid-template-areas: "name id"
                          "type ."
                          "scan ."
                          "time button";
@@ -684,6 +676,37 @@ body {
 .popup-keys[data-content="exist"] .popup-keys__exist { display: -webkit-box; display: -ms-flexbox; display: flex; }
 .popup-keys[data-content="scan"] .popup-keys__scan { display: -webkit-box; display: -ms-flexbox; display: flex; }
 .popup-keys[data-content="new"] .popup-keys__new { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+
+.menu {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 0 20px;
+}
+
+.menu__item {
+    font-size: 12px;
+    font-weight: 700;
+    color: #464c4f;
+    text-transform: uppercase;
+    margin: 0 8px;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.menu__item:hover {
+    color: #00897b;
+    cursor: pointer;
+}
+
+.menu__item_active {
+    color: #00897b;
+}
 
 
 @media only screen and (max-width: 600px) {
