@@ -673,6 +673,10 @@ body {
     display: none;
 }
 
+.popup-keys__exist {
+    flex-direction: row;
+}  
+
 .popup-keys[data-content="exist"] .popup-keys__exist { display: -webkit-box; display: -ms-flexbox; display: flex; }
 .popup-keys[data-content="scan"] .popup-keys__scan { display: -webkit-box; display: -ms-flexbox; display: flex; }
 .popup-keys[data-content="new"] .popup-keys__new { display: -webkit-box; display: -ms-flexbox; display: flex; }
