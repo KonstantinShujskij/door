@@ -19,6 +19,7 @@
         <a class="sidebar__item" href="settings.html">Настройки</a>
         <a class="sidebar__item" href="users.html">Пользователи</a>
         <a class="sidebar__item sidebar__item_active" href="keys.html">Ключи</a>
+        <a class="sidebar__item" href="events.html">События</a>
     </section>
 
     <main class="main">
@@ -59,7 +60,7 @@
 
             <div class="content__info-bar info-bar">
                 <div class="info-bar__select">
-                    Выбрано: <span class="info-bar__value">1</span>
+                    Выбрано: <span id="select-value" class="info-bar__value">1</span>
                 </div>
                 <div class="info-bar__show">
                     Показано: <span class="info-bar__value">2</span> из <span class="info-bar__value">100</span>
@@ -69,10 +70,10 @@
             <div class="content__list keys__list">
                 <div class="card key">
                     <label class="key__select">
-                        <input type="checkbox" class="filled-in" checked="checked" />
+                        <input type="checkbox" data-id="1" class="filled-in" />
                         <span></span>
                     </label>
-                    <div class="card__title key__name" onclick="setPopup('edit')">Key007</div>
+                    <div class="card__title key__name" onclick="openEdit(1)">Key007</div>
                     <div class="key__id">42</div>
                     <div class="key__type">Чип</div>
                     <div class="key__user">
@@ -82,7 +83,7 @@
                         <span>Иван</span>
                     </div>
                     <div class="key__control">
-                        <button class="card__button key__button key__button-edit" onclick="setPopup('edit')">
+                        <button class="card__button key__button key__button-edit" onclick="openEdit(1)">
                             <i class="fa-solid fa-pen"></i>
                         </button>
                         <button class="card__button key__button key__button-remove">
@@ -92,10 +93,10 @@
                 </div>
                 <div class="card key">
                     <label class="key__select">
-                        <input type="checkbox" class="filled-in" checked="checked" />
+                        <input type="checkbox" data-id="2" class="filled-in" />
                         <span></span>
                     </label>
-                    <div class="card__title key__name" onclick="setPopup('edit')">Key007</div>
+                    <div class="card__title key__name" onclick="openEdit(1)">Key007</div>
                     <div class="key__id">42</div>
                     <div class="key__type">Чип</div>
                     <div class="key__user">
@@ -105,7 +106,7 @@
                         <span>Иван</span>
                     </div>
                     <div class="key__control">
-                        <button class="card__button key__button key__button-edit" onclick="setPopup('edit')">
+                        <button class="card__button key__button key__button-edit" onclick="openEdit(1)">
                             <i class="fa-solid fa-pen"></i>
                         </button>
                         <button class="card__button key__button key__button-remove">
@@ -115,10 +116,10 @@
                 </div>
                 <div class="card key">
                     <label class="key__select">
-                        <input type="checkbox" class="filled-in" checked="checked" />
+                        <input type="checkbox" data-id="3" class="filled-in" />
                         <span></span>
                     </label>
-                    <div class="card__title key__name" onclick="setPopup('edit')">Key007</div>
+                    <div class="card__title key__name" onclick="openEdit(1)">Key007</div>
                     <div class="key__id">42</div>
                     <div class="key__type">Чип</div>
                     <div class="key__user">
@@ -128,7 +129,7 @@
                         <span>Иван</span>
                     </div>
                     <div class="key__control">
-                        <button class="card__button key__button key__button-edit" onclick="setPopup('edit')">
+                        <button class="card__button key__button key__button-edit" onclick="openEdit(1)">
                             <i class="fa-solid fa-pen"></i>
                         </button>
                         <button class="card__button key__button key__button-remove">
@@ -143,7 +144,7 @@
             <div class="content__controls">
                 <div class="controls__button-all controls__button-all_select">
                     <label class="controls__chek">
-                        <input type="checkbox" class="filled-in" />
+                        <input id="select-all" type="checkbox" class="filled-in" />
                         <span></span>
                         <div class="chek__label controls-chek__select">Выбрать все</div>
                         <div class="chek__label controls-chek__clear">Отмениьт выбор</div>
@@ -368,7 +369,7 @@
                         <div class="popup__item">
                             <label class="input">
                                 <div class="input__label">Название</div>
-                                <input type="text" class="input__value browser-default" placeholder="Key-000" />
+                                <input id="id-name" type="text" class="input__value browser-default" placeholder="Key-000" />
                             </label>
                         </div>
                     </div>                      
@@ -384,15 +385,10 @@
         </section>
     </main>
 
-    <script>
-        const setPopup = (popup) => {
-            document.getElementById('content').setAttribute('data-popup', popup) 
-            document.querySelectorAll('.popup__content').forEach((item) => item.scrollTop = 0)
-        }
-    </script>
-
     <script src="../js/queries.js"></script>
     <script src="../js/events.js"></script>
+    <script src="../js/value.js"></script>
+    <script src="../js/popup.js"></script>
     <script src="../js/keys.js"></script>
 </body>
 </html>

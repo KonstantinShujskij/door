@@ -19,10 +19,11 @@
         <a class="sidebar__item" href="settings.html">Настройки</a>
         <a class="sidebar__item sidebar__item_active" href="users.html">Пользователи</a>
         <a class="sidebar__item" href="keys.html">Ключи</a>
+        <a class="sidebar__item" href="events.html">События</a>
     </section>
 
     <main class="main">
-        <section id="content" class="content users" data-popup="edit">
+        <section id="content" class="content users" data-popup="none">
             <div class="content__title">Пользователи</div>
 
             <div class="content__filter filter">
@@ -58,7 +59,7 @@
             </div>
             <div class="content__info-bar info-bar">
                 <div class="info-bar__select">
-                    Выбрано: <span class="info-bar__value">1</span>
+                    Выбрано: <span id="select-value" class="info-bar__value">1</span>
                 </div>
                 <div class="info-bar__show">
                     Показано: <span class="info-bar__value">2</span> из <span class="info-bar__value">100</span>
@@ -69,7 +70,37 @@
                 <div class="card user">
                     <div class="card__title user__name" onclick="openEdit(1)">Иванов Василий Петрович</div>
                     <label class="user__select">
-                        <input type="checkbox" class="filled-in" checked="checked" />
+                        <input type="checkbox" class="filled-in" data-id="1" />
+                        <span></span>
+                    </label>
+                    <div class="user__id">42</div>
+                    <div class="user__time">19.04.1943-18.09.2022</div>
+                    <div class="user__company">Google</div>
+                    <div class="user__branch">Deep learning and II</div>
+                    <div class="user__groups">
+                        <div class="user-groups__item">Бугалтер</div>
+                        <div class="user-groups__item">Директор</div>
+
+                        <button class="user-groups__more" onclick="setPopup('edit')">Детальнее</button>
+                    </div>
+                    <div class="user__remove"></div>
+                    <div class="user__control">
+                        <button class="card__button user__button user__button-edit" onclick="openEdit(1)">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="card__button user__button user__button-remove">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                        <button class="card__button user__button user__button-restore" disabled>
+                            <i class="fa-solid fa-trash-can-arrow-up"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card user">
+                    <div class="card__title user__name" onclick="openEdit(1)">Иванов Василий Петрович</div>
+                    <label class="user__select">
+                        <input type="checkbox" class="filled-in" data-id="2" />
                         <span></span>
                     </label>
                     <div class="user__id">42</div>
@@ -99,7 +130,7 @@
                 <div class="card user user_remove">
                     <div class="card__title user__name">Иванов Василий Петрович</div>
                     <label class="user__select">
-                        <input type="checkbox" class="filled-in" disabled="disabled" />
+                        <input type="checkbox" class="filled-in" data-id="3" disabled="disabled" />
                         <span></span>
                     </label>
                     <div class="user__id">42</div>
@@ -136,10 +167,10 @@
             <div class="content__controls">
                 <div class="controls__button-all controls__button-all_select">
                     <label class="controls__chek">
-                        <input type="checkbox" class="filled-in" />
+                        <input id="select-all" type="checkbox" class="filled-in" />
                         <span></span>
                         <div class="chek__label controls-chek__select">Выбрать все</div>
-                        <div class="chek__label controls-chek__clear">Отмениьт выбор</div>
+                        <div class="chek__label controls-chek__clear">Отменить выбор</div>
                     </label>
                 </div>
                 <button class="controls__button controls__button-create" onclick="setPopup('create')">
@@ -150,7 +181,7 @@
                         Добавить
                     </div>  
                 </button>
-                <button class="controls__button controls__button-edit" onclick="setPopup('edit')">
+                <button class="controls__button controls__button-edit" onclick="openEditList()">
                     <div class="controls-button__icon">
                         <i class="fa-solid fa-pen"></i>
                     </div>
@@ -597,7 +628,7 @@
 
                         <div class="popup__subtitle">Ключи</div>
 
-                        <div class="popup__item popup-keys-list">
+                        <div id="key-list" class="popup__item popup-keys-list">
                             <div class="popup-key">
                                 <div class="popup-key__name">Key007</div>
                                 <div class="popup-key__id">42</div>
@@ -774,6 +805,7 @@
 
     <script src="../js/queries.js"></script>
     <script src="../js/events.js"></script>
+    <script src="../js/value.js"></script>
     <script src="../js/popup.js"></script>
     <script src="../js/users.js"></script>
 </body>
