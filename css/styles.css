@@ -674,7 +674,7 @@ body {
 }
 
 .popup-keys__exist {
-    flex-direction: row;
+    flex-direction: column;
 }  
 
 .popup-keys[data-content="exist"] .popup-keys__exist { display: -webkit-box; display: -ms-flexbox; display: flex; }

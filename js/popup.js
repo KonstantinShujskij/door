@@ -1,10 +1,20 @@
 function initialPopupKeys() {
     const popupKeys = document.querySelectorAll('.popup-keys-wrap')
+    const contentWrap = document.querySelector('.popup-keys')
+    const keysPopup = document.querySelector('.keys-popup')
 
-    
+    const keysPopupCancelBtn = document.querySelector('.key-popup__cancel-btn')
+    const keysPopupSetBtn = document.querySelector('.key-popup__set-btn')
 
-    popupKeys.forEach((elem) => {
-        const contentWrap = elem.querySelector('.popup-keys')
+    if(keysPopupCancelBtn) {
+        keysPopupCancelBtn.onclick = () => { keysPopup.classList.remove('popup_open') }
+    }
+    if(keysPopupSetBtn) {
+        keysPopupSetBtn.onclick = () => { keysPopup.classList.remove('popup_open') }
+    }
+
+
+    popupKeys.forEach((elem) => {       
         const addWrap = elem.querySelector('.popup-key-add')
         const btn = elem.querySelector('.popup-key-add__button')
         const list = elem.querySelectorAll('.popup-key-add__case')
@@ -14,6 +24,7 @@ function initialPopupKeys() {
                 const target = item.getAttribute('data-target')
                 contentWrap.setAttribute('data-content', target)
                 addWrap.classList.remove('popup-key-add_open')
+                if(keysPopup) { keysPopup.classList.add('popup_open') }
             }
         })
 

@@ -483,7 +483,7 @@
                         </div>
 
                         <div class="popup__item">
-                            <label class="input">
+                            <label class="input select-input">
                                 <div class="input__label">Компания</div>
                                 <input id="company" type="text" class="input__value browser-default" placeholder="Apple" />
                                 <div class="input__list">
@@ -492,7 +492,7 @@
                                     <div class="input__case">Microsoft</div>
                                 </div>
                             </label>
-                            <label class="input">
+                            <label class="input select-input">
                                 <div class="input__label">Отдел</div>
                                 <input id="branch" type="text" class="input__value browser-default" placeholder="UI UX" />
                                 <div class="input__list">
@@ -511,7 +511,7 @@
                                 <div class="input__label">E-mail</div>
                                 <input id="email" type="text" class="input__value browser-default" placeholder="example@gmail.com" />
                             </label>
-                            <label class="input">
+                            <label class="input value-input">
                                 <div class="input__label">Телефон</div>
                                 <input id="phone" type="text" class="input__value browser-default" placeholder="+370000000000" />
                             </label>
@@ -527,7 +527,7 @@
                         <div class="popup__subtitle">Предпочитаемый язык интерфейса</div>
 
                         <div class="popup__item">
-                            <label class="input">
+                            <label class="input select-input">
                                 <div class="input__label">Язык</div>
                                 <input id="language" type="text" class="input__value browser-default" placeholder="Русский" />
                                 <div class="input__list">
@@ -541,17 +541,78 @@
                         <div class="popup__subtitle">Период действия записи</div>
 
                         <div class="popup__item">
-                            <label class="input">
+                            <div class="input input-date">
                                 <div class="input__label">От</div>
                                 <input id="validFrom" type="text" class="input__value browser-default" placeholder="dd.mm.yyyy" />
-                            </label>
-                            <label class="input">
+                                <div class="input__list mini-calendar">
+                                    <div class="mini-calendar__year">
+                                        <div class="mini-calendar__back-year-btn mini-calendar__btn">
+                                            <i class="fa-solid fa-arrow-left"></i>
+                                        </div>
+                                        <div class="mini-calendar__year-value ml-auto mr-auto">2022</div>
+                                        <div class="mini-calendar__next-year-btn mini-calendar__btn">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mini-calendar__month">
+                                        <div class="mini-calendar__back-month-btn mini-calendar__btn">
+                                            <i class="fa-solid fa-arrow-left"></i>
+                                        </div>
+                                        <div class="mini-calendar__month-value ml-auto mr-auto">октябрь</div>
+                                        <div class="mini-calendar__next-month-btn mini-calendar__btn">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mini-calendar__week">
+                                        <div>пн</div>
+                                        <div>вт</div>
+                                        <div>ср</div>
+                                        <div>чт</div>
+                                        <div>пт</div>
+                                        <div>сб</div>
+                                        <div>вс</div>
+                                    </div>
+                                    <div class="mini-calendar__days" data-start="0"></div>
+                                </div>
+                            </div>
+
+                            <div class="input input-date">
                                 <div class="input__label">До</div>
                                 <input id="validTo" type="text" class="input__value browser-default" placeholder="dd.mm.yyyy" />
-                            </label>
+                                <div class="input__list mini-calendar">
+                                    <div class="mini-calendar__year">
+                                        <div class="mini-calendar__back-year-btn mini-calendar__btn">
+                                            <i class="fa-solid fa-arrow-left"></i>
+                                        </div>
+                                        <div class="mini-calendar__year-value ml-auto mr-auto">2022</div>
+                                        <div class="mini-calendar__next-year-btn mini-calendar__btn">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mini-calendar__month">
+                                        <div class="mini-calendar__back-month-btn mini-calendar__btn">
+                                            <i class="fa-solid fa-arrow-left"></i>
+                                        </div>
+                                        <div class="mini-calendar__month-value ml-auto mr-auto">октябрь</div>
+                                        <div class="mini-calendar__next-month-btn mini-calendar__btn">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mini-calendar__week">
+                                        <div>пн</div>
+                                        <div>вт</div>
+                                        <div>ср</div>
+                                        <div>чт</div>
+                                        <div>пт</div>
+                                        <div>сб</div>
+                                        <div>вс</div>
+                                    </div>
+                                    <div class="mini-calendar__days" data-start="0"></div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="poup__item">
+                        <div class="popup__item">
                             <label class="popup__chek">
                                 <input type="checkbox" class="filled-in" />
                                 <span></span>
@@ -662,119 +723,6 @@
                         </div>
 
                         <div class="popup-keys-wrap">
-                            <div class="popup-keys" data-content="exist">
-                                <div class="popup__item popup-keys-list popup-keys__exist">
-                                    <div class="popup-key">
-                                        <div class="popup-key__name">Key007</div>
-                                        <div class="popup-key__id">42</div>
-                                        <div class="popup-key__type">Чип</div>
-                                        <div class="popup-key__button">
-                                            <button class="popup-key__button-add" tooltip="Прикрепить">
-                                                <i class="fa-solid fa-link"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="popup-key">
-                                        <div class="popup-key__name">Key007</div>
-                                        <div class="popup-key__id">42</div>
-                                        <div class="popup-key__type">Чип</div>
-                                        <div class="popup-key__button">
-                                            <button class="popup-key__button-add" tooltip="Прикрепить">
-                                                <i class="fa-solid fa-link"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="popup-key">
-                                        <div class="popup-key__name">Key007</div>
-                                        <div class="popup-key__id">42</div>
-                                        <div class="popup-key__type">Чип</div>
-                                        <div class="popup-key__button">
-                                            <button class="popup-key__button-add" tooltip="Прикрепить">
-                                                <i class="fa-solid fa-link"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="popup-keys__scan">
-                                    <div class="popup__item">
-                                        <label class="input">
-                                            <div class="input__label">Считыватель</div>
-                                            <input type="text" class="input__value browser-default" placeholder="AXD-7" value="все"/>
-                                            <div class="input__list">
-                                                <div class="input__case">Все</div>
-                                                <div class="input__case">AXD-1</div>
-                                                <div class="input__case">AXD-2</div>
-                                                <div class="input__case">AXD-4</div>
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div class="popup__item popup-keys-list">
-                                        <div class="popup-key popup-key-scan">
-                                            <div class="popup-key__name">Unnamed</div>
-                                            <div class="popup-key__id">42</div>
-                                            <div class="popup-key__type">Карта</div>
-                                            <div class="popup-key__scan">AXD-1</div>
-                                            <div class="popup-key__time">09.08.2007 18:30</div>
-                                            <div class="popup-key__button">
-                                                <button class="popup-key__button-add" tooltip="Добавить">
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="popup-key popup-key-scan">
-                                            <div class="popup-key__name">Unnamed</div>
-                                            <div class="popup-key__id">42</div>
-                                            <div class="popup-key__type">Карта</div>
-                                            <div class="popup-key__scan">AXD-1</div>
-                                            <div class="popup-key__time">09.08.2007 18:30</div>
-                                            <div class="popup-key__button">
-                                                <button class="popup-key__button-add" tooltip="Добавить">
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="popup-key popup-key-scan">
-                                            <div class="popup-key__name">Unnamed</div>
-                                            <div class="popup-key__id">42</div>
-                                            <div class="popup-key__type">Карта</div>
-                                            <div class="popup-key__scan">AXD-1</div>
-                                            <div class="popup-key__time">09.08.2007 18:30</div>
-                                            <div class="popup-key__button">
-                                                <button class="popup-key__button-add" tooltip="Добавить">
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="popup-keys__new">
-                                    <div class="popup__item">
-                                        <label class="input">
-                                            <div class="input__label">Тип</div>
-                                            <input type="text" class="input__value browser-default" placeholder="Карта" />
-                                            <div class="input__list">
-                                                <div class="input__case">Карта</div>
-                                                <div class="input__case">Пинкод</div>
-                                                <div class="input__case">Чип</div>
-                                            </div>
-                                        </label>
-                                        <label class="input">
-                                            <div class="input__label">Name</div>
-                                            <input type="text" class="input__value browser-default" placeholder="Key007" />
-                                        </label>
-                                        <label class="input">
-                                            <div class="input__label">ID</div>
-                                            <input type="text" class="input__value browser-default" placeholder="42" />
-                                        </label>
-                                    </div>
-                                    <div class="popup__item">
-                                        <button class="popup__subbutton" >Добавить</button>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="popup__item popup-key-add-wrap">
                                 <div class="popup-key-add">
                                     <button class="popup-key-add__button" tooltip="Добавить ключ">
@@ -800,12 +748,150 @@
                     </div>
                 </div>
             </div>
+
+            <div class="popup keys-popup">
+                <div class="popup__body">
+                    <div class="popup__close"></div>
+
+                    <div class="popup__content">
+                        <div class="popup-keys" data-content="exist">
+                            <div class="popup-keys__exist">
+                                <div class="popup__subtitle">Добавить существующий</div>
+
+                                <div class="popup__item popup-keys-list">
+                                    <div class="popup-key">
+                                        <div class="popup-key__name">Key007</div>
+                                        <div class="popup-key__id">42</div>
+                                        <div class="popup-key__type">Чип</div>
+                                        <div class="popup-key__button">
+                                            <button class="popup-key__button-add" tooltip="Прикрепить">
+                                                <i class="fa-solid fa-link"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="popup-key">
+                                        <div class="popup-key__name">Key007</div>
+                                        <div class="popup-key__id">42</div>
+                                        <div class="popup-key__type">Чип</div>
+                                        <div class="popup-key__button">
+                                            <button class="popup-key__button-add" tooltip="Прикрепить">
+                                                <i class="fa-solid fa-link"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="popup-key">
+                                        <div class="popup-key__name">Key007</div>
+                                        <div class="popup-key__id">42</div>
+                                        <div class="popup-key__type">Чип</div>
+                                        <div class="popup-key__button">
+                                            <button class="popup-key__button-add" tooltip="Прикрепить">
+                                                <i class="fa-solid fa-link"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+        
+                            <div class="popup-keys__scan">
+                                <div class="popup__subtitle">Добавить считанный</div>
+
+                                <div class="popup__item">
+                                    <label class="input select-input">
+                                        <div class="input__label">Считыватель</div>
+                                        <input type="text" class="input__value browser-default" placeholder="AXD-7" value="все"/>
+                                        <div class="input__list">
+                                            <div class="input__case">Все</div>
+                                            <div class="input__case">AXD-1</div>
+                                            <div class="input__case">AXD-2</div>
+                                            <div class="input__case">AXD-4</div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="popup__item popup-keys-list">
+                                    <div class="popup-key popup-key-scan">
+                                        <div class="popup-key__name">Unnamed</div>
+                                        <div class="popup-key__id">42</div>
+                                        <div class="popup-key__type">Карта</div>
+                                        <div class="popup-key__scan">AXD-1</div>
+                                        <div class="popup-key__time">09.08.2007 18:30</div>
+                                        <div class="popup-key__button">
+                                            <button class="popup-key__button-add" tooltip="Добавить">
+                                                <i class="fa-solid fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="popup-key popup-key-scan">
+                                        <div class="popup-key__name">Unnamed</div>
+                                        <div class="popup-key__id">42</div>
+                                        <div class="popup-key__type">Карта</div>
+                                        <div class="popup-key__scan">AXD-1</div>
+                                        <div class="popup-key__time">09.08.2007 18:30</div>
+                                        <div class="popup-key__button">
+                                            <button class="popup-key__button-add" tooltip="Добавить">
+                                                <i class="fa-solid fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="popup-key popup-key-scan">
+                                        <div class="popup-key__name">Unnamed</div>
+                                        <div class="popup-key__id">42</div>
+                                        <div class="popup-key__type">Карта</div>
+                                        <div class="popup-key__scan">AXD-1</div>
+                                        <div class="popup-key__time">09.08.2007 18:30</div>
+                                        <div class="popup-key__button">
+                                            <button class="popup-key__button-add" tooltip="Добавить">
+                                                <i class="fa-solid fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="popup-keys__new">
+                                <div class="popup__subtitle">Добавить новый</div>
+
+                                <div class="popup__item">
+                                    <label class="input select-input">
+                                        <div class="input__label">Тип</div>
+                                        <input id="keytype" type="text" class="input__value browser-default" placeholder="Карта" />
+                                        <div class="input__list">
+                                            <div class="input__case">Карта</div>
+                                            <div class="input__case">Пинкод</div>
+                                            <div class="input__case">Чип</div>
+                                        </div>
+                                    </label>
+                                    <label class="input">
+                                        <div class="input__label">Name</div>
+                                        <input type="text" class="input__value browser-default" placeholder="Key007" />
+                                    </label>
+                                    <label class="input">
+                                        <div class="input__label">ID</div>
+                                        <input type="text" class="input__value browser-default" placeholder="42" />
+                                    </label>
+                                </div>
+                                <div class="popup__item">
+                                    <button class="popup__subbutton" >Добавить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="popup__footer">
+                        <div class="popup__item popup__buttons filtet-popup__buttons">
+                            <button class="popup__button key-popup__cancel-btn">Отменить</button>
+                            <button class="popup__button key-popup__set-btn">Применить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <script src="../js/queries.js"></script>
     <script src="../js/events.js"></script>
     <script src="../js/value.js"></script>
+    <script src="../js/input.js"></script>
     <script src="../js/popup.js"></script>
     <script src="../js/users.js"></script>
 </body>

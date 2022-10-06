@@ -36,6 +36,13 @@ window.onload = () => {
 
     initialPopupKeys()
 
+    initialInputs()
+
+    console.log(inputs);
+
+    inputs.keytype.validate = () => false
+    inputs.scaner.validate = () => false
+
     const popup = new PopupEdit(document.querySelector('.popup.edit-popup'))
 
     openEdit = (id) => {

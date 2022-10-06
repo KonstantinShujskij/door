@@ -68,9 +68,25 @@ window.onload = () => {
         httpRequest('/sort/users', { dragItem, dropItem }) 
     })
 
+    initialPopupKeys()
+      
+
+    initialInputs()
+
+    inputs.language.validate = () => false
+    inputs.validFrom.validate = () => false
+    inputs.validTo.validate = () => false
+    inputs.keytype.validate = () => false
+
+    
+
+    inputs.phone.validate = (value) => {
+        const patern = /^\+?\d*$/
+        return patern.test(value)
+    }
+
     setLoadHandler(() => { httpRequest('/getdata/user') })
 
-    initialPopupKeys()
 
     const popup = new PopupEdit(document.querySelector('.popup.edit-popup'))
 

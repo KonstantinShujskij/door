@@ -211,9 +211,9 @@
                             </label>
                         </div>
                         <div class="popup__item">
-                            <label class="input">
+                            <label class="input select-input">
                                 <div class="input__label">Тип</div>
-                                <input type="text" class="input__value browser-default" placeholder="Apple" />
+                                <input type="text" class="input__value browser-default" placeholder="Чип" />
                                 <div class="input__list">
                                     <div class="input__case">Карта</div>
                                     <div class="input__case">Чип</div>
@@ -249,15 +249,15 @@
                         </div>
                     </div>
 
-                    <div class="popup__content">
+                    <div class="popup__content popup-keys-wrap">
                         <div class="popup__title">Добавление ключа</div>
 
                         <div class="popup-keys" data-content="scan">
                             <div class="popup-keys__scan">
                                 <div class="popup__item">
-                                    <label class="input">
+                                    <label class="input select-input">
                                         <div class="input__label">Считыватель</div>
-                                        <input type="text" class="input__value browser-default" placeholder="AXD-7" value="все"/>
+                                        <input type="text" id="scaner" class="input__value browser-default" placeholder="AXD-7" value="все"/>
                                         <div class="input__list">
                                             <div class="input__case">Все</div>
                                             <div class="input__case">AXD-1</div>
@@ -308,9 +308,9 @@
 
                             <div class="popup-keys__new">
                                 <div class="popup__item">
-                                    <label class="input">
+                                    <label class="input select-input">
                                         <div class="input__label">Тип</div>
-                                        <input type="text" class="input__value browser-default" placeholder="Карта" />
+                                        <input type="text" id="keytype" class="input__value browser-default" placeholder="Карта" />
                                         <div class="input__list">
                                             <div class="input__case">Карта</div>
                                             <div class="input__case">Пинкод</div>
@@ -387,8 +387,9 @@
 
     <script src="../js/queries.js"></script>
     <script src="../js/events.js"></script>
-    <script src="../js/value.js"></script>
     <script src="../js/popup.js"></script>
+    <script src="../js/value.js"></script>
+    <script src="../js/input.js"></script>
     <script src="../js/keys.js"></script>
 </body>
 </html>
